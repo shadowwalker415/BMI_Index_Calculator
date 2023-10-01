@@ -1,0 +1,56 @@
+html {
+  font-size: 62.5%; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.2; }
+
+.u_margin_bottom--large {
+  margin-bottom: 5.2rem; }
+
+.u_margin_bottom--medium {
+  margin-bottom: 4.8rem; }
+
+.u_margin_bottom--small {
+  margin-bottom: 3.2rem; }
+
+.header__main {
+  max-width: 70%;
+  margin-left: 2rem;
+  padding: 4rem 8rem;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, #ffffff, #d8e2e7);
+  border-radius: 0 0 4rem 4rem;
+  position: relative; }
+  .header__main-textbox {
+    max-width: 60%; }
+  .header__main-heading-main {
+    font-size: 4.8rem;
+    font-weight: 600;
+    color: #253347; }
+  .header__main-text-main {
+    font-size: 1.6rem;
+    color: #5e6e85; }
+
+.bmi__calcbox {
+  max-width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  padding: 2rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 2rem 0 8rem rgba(37, 51, 71, 0.15); }
+  .bmi__calcbox-heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #253347; }
