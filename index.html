@@ -19,7 +19,7 @@
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
   <body>
-    <header class="header__main">
+    <header class="header__main u_margin_bottom--large">
       <div class="header__main-logo u_margin_bottom--large">
         <img src="images/logo.svg" alt="logo image" class="logo" />
       </div>
@@ -36,31 +36,164 @@
       </div>
     </header>
     <div class="bmi__calcbox">
-      <h3 class="bmi__calcbox-heading u_margin_bottom--medium">
-        Enter your details below
-      </h3>
-      <form action="#" class="bmi__calcbox-radioform">
-        <div class="weight__type">
-          <input type="radio" class="weight__type-metric" id="metric" />
-          <label for="metric">Metric</label>
-          <input type="radio" class="weight__type-imperial" id="imperial" />
-          <label for="imperial">Imperial</label>
-        </div>
-        <div class="iput__type">
-          <label for="height">Height</label>
-          <input type="text" class="input__type-height" id="height" />
-          <label for="weight">Weight</label>
-          <input type="text" class="input__type-weight" id="weight" />
-        </div>
-      </form>
-      <div class="bmi__resultbox">
-        <div class="bmi__resultbox-secondwrapper">
-          <h4 class="result_welcome-msg">Welcome!</h4>
-          <p class="result__status">
+      <div class="u_center_box">
+        <h3 class="bmi__calcbox-heading u_margin_bottom--small">
+          Enter your details below
+        </h3>
+        <form action="#" class="form u_margin_bottom--small">
+          <div class="form__radio-group u_margin_bottom--small">
+            <div class="radio__group">
+              <input
+                type="radio"
+                class="radio__input"
+                id="metric"
+                name="weight"
+              />
+              <label class="radio__label" for="metric">
+                <span class="radio__btn"></span> Metric</label
+              >
+            </div>
+            <div class="radio__group">
+              <input
+                type="radio"
+                class="radio__input"
+                id="imperial"
+                name="weight"
+              />
+              <label class="radio__label" for="imperial">
+                <span class="radio__btn"></span> Imperial
+              </label>
+            </div>
+          </div>
+
+          <div class="form__input-group">
+            <div class="input__group">
+              <label class="input__label" for="height">Height</label>
+              <input
+                type="text"
+                class="input__type"
+                id="height"
+                placeholder="0"
+              />
+            </div>
+            <div class="input__group">
+              <label class="input__label" for="weight">Weight</label>
+              <input
+                type="text"
+                class="input__type"
+                id="weight"
+                placeholder="0"
+              />
+            </div>
+          </div>
+          <!-- <button class="form__btn" type="submit"></button> -->
+        </form>
+        <div class="result__box">
+          <p class="result__box-welcome">Welcome!</p>
+          <p class="result__box-info">
             Enter your height and weight and you'll see your results here
           </p>
+          <!-- <div class="display__box">
+            <div class="display__box-result">
+              <p class="result__tip">Your BMI is...</p>
+              <p class="bmi__result">0.0</p>
+            </div>
+            <div class="display__box-recommendation">
+              <p class="bmi__recommendation">
+                Your BMI suggest you have a healthy weight. Your ideal weight is
+                between
+              </p>
+              <span class="min-bmi">0.0kgs</span>
+              <span class="dash-separator">-</span>
+              <span class="max-bmi">0.0kgs</span>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
+    <section class="section__result-analysis">
+      <div class="wrapper">
+        <div class="wrapper__img-container">
+          <img
+            src="images/image-man-eating.webp"
+            alt="Man eating healthy food"
+            class="image"
+          />
+        </div>
+        <div class="wrapper__analysis-container">
+          <h2 class="analysis__heading">What your BMI result means</h2>
+          <p class="analysis__description">
+            A BMI of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining
+            a healthy weight may lower your chances of experiencing health
+            issues later on, such as obesity and type 2 diabetes. Aim for a
+            nutritious diet with reduced fat and sugar content, incorporation
+            ample fruits and vegetables. In addition, strive for regular
+            physical activities, ideally about 30 minutes daily for five days a
+            week.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section__guidelines">
+      <div class="section__guidelines-container">
+        <div class="guideline__item children_margin-bottom">
+          <img
+            src="images/icon-eating.svg"
+            alt="icon of a bowl of food"
+            class="guideline__item-logo"
+          />
+
+          <h3 class="guideline__item-heading">Healthy eating</h3>
+
+          <p class="guideline__item-description">
+            Healthy eating promotes weight control,disease prevention, better
+            digestion, immunity, mental clarity and mood
+          </p>
+        </div>
+
+        <div class="guideline__item children_margin-bottom">
+          <img
+            src="images/icon-exercise.svg"
+            alt="icon of a bowl of food"
+            class="guideline__item-logo"
+          />
+
+          <h3 class="guideline__item-heading">Regular exercise</h3>
+
+          <p class="guideline__item-description">
+            Exercise improves fitness, aids weight control, elevates mood and
+            reduces disease risk, frostering wellness and longevity.
+          </p>
+        </div>
+
+        <div class="guideline__item children_margin-bottom">
+          <img
+            src="images/icon-sleep.svg"
+            alt="icon of a bowl of food"
+            class="guideline__item-logo"
+          />
+
+          <h3 class="guideline__item-heading">Healthy eating</h3>
+
+          <p class="guideline__item-description">
+            Sleep enhances mental clarity, emotional stability, and physical
+            wellness, promoting overall restoration and rejuvenation.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section__limitations">
+      <div class="section__limitations-container">
+        <div class="limitations__intro-container">
+          <h2 class="limitations__heading">Limitations of BMI</h2>
+          <p class="limitations__description">
+            Although BMI is a practical indicator of healthy weight, it is not
+            suited for every person. Specific groups should carefully consider
+            their BMI outcomes, and in certain cases, the measurements may not
+            be benefitial to use.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

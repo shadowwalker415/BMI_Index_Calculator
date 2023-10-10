@@ -19,27 +19,12 @@
     font-size: $heading-secondary-size;
     font-weight: 600;
     color: $color-black;
+    animation: moveDown 1s;
   }
 
   &-text-main {
     font-size: 1.6rem;
     color: $color-dark-electric-blue;
-  }
-}
-
-.bmi__calcbox {
-  max-width: 100%;
-  background-color: $color-white;
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  padding: 2rem 2rem;
-  border-radius: 2rem;
-  box-shadow: 2rem 0 8rem rgba($color-black, 0.15);
-
-  &-heading {
-    font-size: $heading-tertiary-size;
-    font-weight: 600;
-    color: $color-black;
+    animation: moveUp 1s;
   }
 }

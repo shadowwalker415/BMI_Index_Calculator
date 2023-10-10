@@ -1,5 +1,5 @@
 .u_margin_bottom--large {
-  margin-bottom: 5.2rem;
+  margin-bottom: 8.2rem;
 }
 
 .u_margin_bottom--medium {
@@ -7,5 +7,13 @@
 }
 
 .u_margin_bottom--small {
-  margin-bottom: 3.2rem;
+  margin-bottom: 4rem;
+}
+
+.u_center_box {
+  margin: 0 auto;
+}
+
+.children_margin-bottom > * {
+  margin-bottom: 2.4rem;
 }
