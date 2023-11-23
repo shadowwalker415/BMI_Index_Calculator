@@ -1,6 +1,5 @@
 .section__result-analysis {
   .wrapper {
-    @include centerDiv;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -13,7 +12,7 @@
     }
 
     &__analysis-container {
-      padding: 8rem;
+      padding: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -43,13 +42,12 @@
   background-color: $color-light-blue;
 
   &-container {
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem;
 
     .guideline__item {
-      padding: 0 2rem;
+      padding: 0 4rem;
       &-heading {
         font-size: $heading-tertiary-size;
         font-weight: 500;
@@ -57,6 +55,94 @@
       }
 
       &-description {
+        font-size: $body-text-size;
+        color: $color-dark-electric-blue;
+      }
+    }
+  }
+}
+
+.section__limitations {
+  padding: 0 4rem;
+  height: 115vh;
+  &-container {
+    padding: inherit;
+  }
+
+  .limitations__intro-container {
+    max-width: 60.8rem;
+    margin-bottom: 8rem;
+    .limitations__heading {
+      font-size: $heading-secondary-size;
+      color: $color-black;
+    }
+
+    .limitations__description {
+      font-size: $body-text-size;
+      color: $color-dark-electric-blue;
+      line-height: 1.5;
+    }
+  }
+
+  .limitations__cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+    position: relative;
+
+    .limitations__cards-container > * {
+      max-width: 38rem;
+    }
+
+    .card {
+      padding: 2rem 2.4rem;
+      box-shadow: 1rem 0 4rem rgba($color-black, 0.15);
+      border-radius: 2rem;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        @include fixedCardSize;
+        position: absolute;
+      }
+
+      &:nth-child(1) {
+        top: -22rem;
+        right: 10rem;
+      }
+
+      &:nth-child(2) {
+        right: 43rem;
+      }
+
+      &:nth-child(3) {
+        right: 2rem;
+      }
+
+      &:nth-child(5) {
+        top: 20rem;
+        right: 14rem;
+      }
+
+      &:nth-child(4) {
+        top: 20rem;
+        right: 55rem;
+      }
+
+      &__intro-container {
+        display: flex;
+        gap: 1.8rem;
+        align-items: center;
+      }
+
+      &__heading {
+        font-size: 1.8rem;
+        color: $color-black;
+      }
+
+      &__description-text {
         font-size: $body-text-size;
         color: $color-dark-electric-blue;
       }

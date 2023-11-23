@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <!-- <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
-    />
+    /> -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script type="module" src="index.js"></script>
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
   <body>
@@ -36,65 +37,99 @@
       </div>
     </header>
     <div class="bmi__calcbox">
-      <div class="u_center_box">
-        <h3 class="bmi__calcbox-heading u_margin_bottom--small">
-          Enter your details below
-        </h3>
-        <form action="#" class="form u_margin_bottom--small">
-          <div class="form__radio-group u_margin_bottom--small">
-            <div class="radio__group">
-              <input
-                type="radio"
-                class="radio__input"
-                id="metric"
-                name="weight"
-              />
-              <label class="radio__label" for="metric">
-                <span class="radio__btn"></span> Metric</label
-              >
-            </div>
-            <div class="radio__group">
-              <input
-                type="radio"
-                class="radio__input"
-                id="imperial"
-                name="weight"
-              />
-              <label class="radio__label" for="imperial">
-                <span class="radio__btn"></span> Imperial
-              </label>
-            </div>
+      <h3 class="bmi__calcbox-heading u_margin_bottom--small">
+        Enter your details below
+      </h3>
+      <form action="#" class="form__radio u_margin_bottom--small">
+        <div class="radio__group">
+          <input
+            type="radio"
+            class="radio__input"
+            id="metric"
+            name="weight"
+            checked
+          />
+          <label class="radio__label" for="metric">
+            <span class="radio__btn"></span> Metric</label
+          >
+        </div>
+        <div class="radio__group">
+          <input
+            type="radio"
+            class="radio__input"
+            id="imperial"
+            name="weight"
+          />
+          <label class="radio__label" for="imperial">
+            <span class="radio__btn"></span> Imperial
+          </label>
+        </div>
+      </form>
+      <div class="input__container">
+        <!-- <form action="#" class="form__metric">
+          <div class="form__metric-height">
+            <label class="input__label" for="height">Height</label>
+            <input
+              type="text"
+              class="input__type"
+              id="height"
+              name="height"
+              placeholder="0"
+              required
+            />
+          </div>
+          <div class="form__metric-weight">
+            <label class="input__label" for="weight">Weight</label>
+            <input
+              type="text"
+              class="input__type"
+              id="weight"
+              name="weight"
+              placeholder="0"
+              required
+            />
           </div>
 
-          <div class="form__input-group">
-            <div class="input__group">
-              <label class="input__label" for="height">Height</label>
-              <input
-                type="text"
-                class="input__type"
-                id="height"
-                placeholder="0"
-              />
-            </div>
-            <div class="input__group">
-              <label class="input__label" for="weight">Weight</label>
-              <input
-                type="text"
-                class="input__type"
-                id="weight"
-                placeholder="0"
-              />
-            </div>
-          </div>
-          <!-- <button class="form__btn" type="submit"></button> -->
-        </form>
-        <div class="result__box">
-          <p class="result__box-welcome">Welcome!</p>
-          <p class="result__box-info">
-            Enter your height and weight and you'll see your results here
-          </p>
-          <!-- <div class="display__box">
-            <div class="display__box-result">
+          <input class="input__btn" type="submit" />
+        </form> -->
+
+        <!-- <form action="#" class="form__imperial">
+        <div class="form__imperial-height">
+          <label class="input__label" for="foot">Height</label>
+          <input type="text" class="input__type" id="foot" placeholder="0" />
+        </div>
+
+        <div class="form__imperial-height">
+          <label class="input__label-invisible" for="inch">Height</label>
+          <input type="text" class="input__type" id="inch" placeholder="0" />
+        </div>
+
+        <div class="form__imperial-height">
+          <label class="input__label" for="stone">Weight</label>
+          <input type="text" class="input__type" id="stone" placeholder="0" />
+        </div>
+        <div class="form__imperial-height">
+          <label class="input__label-invisible" for="pounds">Weight </label>
+          <input
+            type="text"
+            class="input__type"
+            id="pounds"
+            placeholder="0"
+          />
+        </div>
+
+        <input class="input__btn" type="submit" />
+      </form> -->
+      </div>
+
+      <div class="result__box">
+        <p class="result__box-welcome">Welcome!</p>
+        <p class="result__box-info">
+          Enter your height and weight and you'll see your results here
+        </p>
+
+        <!-- <div class="display__box">
+          <div class="display__box-result">
               <p class="result__tip">Your BMI is...</p>
               <p class="bmi__result">0.0</p>
             </div>
@@ -107,8 +142,7 @@
               <span class="dash-separator">-</span>
               <span class="max-bmi">0.0kgs</span>
             </div>
-          </div> -->
-        </div>
+        </div> -->
       </div>
     </div>
     <section class="section__result-analysis">
@@ -184,7 +218,7 @@
     </section>
     <section class="section__limitations">
       <div class="section__limitations-container">
-        <div class="limitations__intro-container">
+        <div class="limitations__intro-container children_margin-bottom">
           <h2 class="limitations__heading">Limitations of BMI</h2>
           <p class="limitations__description">
             Although BMI is a practical indicator of healthy weight, it is not
@@ -192,6 +226,81 @@
             their BMI outcomes, and in certain cases, the measurements may not
             be benefitial to use.
           </p>
+        </div>
+        <div class="limitations__cards-container">
+          <div class="card children_margin-bottom">
+            <div class="card__intro-container">
+              <img
+                src="images/icon-gender.svg"
+                alt="A gender icon"
+                class="card__icon"
+              />
+              <h4 class="card__heading">Gender</h4>
+            </div>
+            <p class="card__description-text">
+              The development and body fat composition of girls and boys vary
+              with age. Consequently, a child's age and gender are considered
+              when evaluating their BMI.
+            </p>
+          </div>
+          <div class="card children_margin-bottom">
+            <div class="card__intro-container">
+              <img
+                src="images/icon-age.svg"
+                alt="An age icon"
+                class="card__icon"
+              />
+              <h4 class="card__heading">Age</h4>
+            </div>
+            <p class="card__description-text">
+              In aging individuals, increased body fat and muscle loss may cause
+              BMI to underestimate body fat content.
+            </p>
+          </div>
+          <div class="card children_margin-bottom">
+            <div class="card__intro-container">
+              <img
+                src="images/icon-muscle.svg"
+                alt="A muscle icon"
+                class="card__icon"
+              />
+              <h4 class="card__heading">Muscle</h4>
+            </div>
+            <p class="card__description-text">
+              BMI may classsify muscular individuals as overweight or obese, as
+              it doesn't differentiate fat from muscle.
+            </p>
+          </div>
+          <div class="card children_margin-bottom">
+            <div class="card__intro-container">
+              <img
+                src="images/icon-pregnancy.svg"
+                alt="A icon of a baby"
+                class="card__icon"
+              />
+              <h4 class="card__heading">Pregnacy</h4>
+            </div>
+            <p class="card__description-text">
+              Expectant mothers experience weight gain due to their growing
+              baby. Maintaining a healthy pre-pregnancy BMI is advisable to
+              minimise health risk for both mother and child.
+            </p>
+          </div>
+          <div class="card children_margin-bottom">
+            <div class="card__intro-container">
+              <img
+                src="images/icon-race.svg"
+                alt="An icon of a human"
+                class="card__icon"
+              />
+              <h4 class="card__heading">Race</h4>
+            </div>
+            <p class="card__description-text">
+              Certain health concerns may affect individuals of some Black and
+              Asian origins at lower BMIs than others. To learn more, it is
+              advised to discuss this with you GP or practice nurse.
+            </p>
+          </div>
         </div>
       </div>
     </section>

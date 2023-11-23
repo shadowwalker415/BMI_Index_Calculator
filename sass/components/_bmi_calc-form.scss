@@ -1,11 +1,11 @@
 .bmi__calcbox {
-  max-width: 45%;
+  max-width: 65rem;
   padding: 4rem 4rem;
   border-radius: 2rem;
   background-color: $color-white;
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 12rem;
+  right: 4rem;
   box-shadow: 2rem 0 8rem rgba($color-black, 0.15);
   overflow: hidden;
   animation: slideLeft 1s;
@@ -17,112 +17,124 @@
     color: $color-black;
   }
 
-  .form {
+  .form__radio {
     font-family: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 
-    &__radio-group {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
+    .radio__group {
+      .radio__input {
+        display: none;
+      }
 
-      .radio__group {
-        .radio__input {
-          display: none;
-        }
+      .radio__label {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        color: $color-black;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4rem;
 
-        .radio__label {
-          font-size: 1.4rem;
-          font-weight: 700;
-          text-align: center;
-          color: $color-black;
-          cursor: pointer;
-          position: relative;
-          padding-left: 4rem;
+        .radio__btn {
+          display: inline-block;
+          height: 2.4rem;
+          width: 2.4rem;
+          border-radius: 50%;
+          border: 0.1rem solid $color-light-blue;
+          position: absolute;
+          left: 0;
+          top: -0.4rem;
 
-          .radio__btn {
-            display: inline-block;
-            height: 2.4rem;
-            width: 2.4rem;
+          &:hover {
+            border: 0.1rem solid $color-blue-dark;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            height: 1.2rem;
+            width: 1.2rem;
             border-radius: 50%;
-            border: 0.1rem solid $color-light-blue;
+            background-color: $color-blue-dark;
             position: absolute;
-            left: 0;
-            top: -0.4rem;
-
-            &:hover {
-              border: 0.1rem solid $color-blue-dark;
-            }
-
-            &::after {
-              content: "";
-              display: block;
-              height: 1.2rem;
-              width: 1.2rem;
-              border-radius: 50%;
-              background-color: $color-blue-dark;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              opacity: 0;
-              transition: opacity 0.3s;
-            }
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
           }
         }
+      }
 
-        .radio__input:checked + .radio__label .radio__btn {
-          background-color: $color-light-blue;
+      .radio__input:checked + .radio__label .radio__btn {
+        background-color: $color-light-blue;
+      }
+
+      .radio__input:checked + .radio__label .radio__btn::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .form__metric,
+  .form__imperial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    margin-bottom: 2rem;
+
+    &-height,
+    &-weight {
+      .input__label,
+      .input__label-invisible {
+        position: relative;
+        display: block;
+        font-size: $body-text-size;
+        color: $color-dark-electric-blue;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .input__label-invisible {
+        opacity: 0;
+      }
+
+      .input__type {
+        box-sizing: border-box;
+        width: 100%;
+        font-family: inherit;
+        font-size: 2rem;
+        font-weight: 700;
+        text-indent: 2rem;
+        padding: 1.8rem 0;
+        border-radius: 0.6rem;
+        border: 0.1rem solid $color-light-blue;
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          border: 0.1rem solid $color-blue-dark;
         }
-        .radio__input:checked + .radio__label .radio__btn::after {
-          opacity: 1;
+
+        &::placeholder {
+          font-size: 2rem;
+          font-weight: 700;
+          color: $color-light-blue;
         }
       }
     }
 
-    &__input-group {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      .input__group {
-        display: inline-block;
-
-        .input__type {
-          max-width: 70%;
-          display: block;
-          font-family: inherit;
-          font-size: 2rem;
-          font-weight: 700;
-          text-indent: 2rem;
-          margin-top: 1rem;
-          padding: 1.8rem 0;
-          border-radius: 0.6rem;
-          border: 0.1rem solid $color-light-blue;
-          cursor: pointer;
-
-          &:hover,
-          &:focus,
-          &:focus-visible {
-            border: 0.1rem solid $color-blue-dark;
-          }
-
-          &::placeholder {
-            font-size: 2rem;
-            font-weight: 700;
-            color: $color-light-blue;
-          }
-        }
-
-        .input__label {
-          font-size: 1.4rem;
-          font-weight: 400;
-          color: $color-dark-electric-blue;
-        }
-      }
+    .input__btn {
+      display: none;
     }
   }
 
   .result__box {
     padding: 2.4rem 4rem;
+    border-radius: 0.6rem;
     background-color: $color-blue-dark;
     color: $color-white;
 

@@ -23,9 +23,6 @@ body {
 .u_margin_bottom--small {
   margin-bottom: 4rem; }
 
-.u_center_box {
-  margin: 0 auto; }
-
 .children_margin-bottom > * {
   margin-bottom: 2.4rem; }
 
@@ -54,9 +51,9 @@ body {
     opacity: 1; } }
 
 .header__main {
-  max-width: 70%;
+  max-width: 100rem;
   margin-left: 2rem;
-  padding: 4rem 8rem;
+  padding: 4rem 4rem;
   height: 100vh;
   background-image: linear-gradient(to bottom right, #ffffff, #d8e2e7);
   border-radius: 0 0 4rem 4rem;
@@ -70,17 +67,18 @@ body {
     animation: moveDown 1s; }
   .header__main-text-main {
     font-size: 1.6rem;
+    line-height: 1.5;
     color: #5e6e85;
     animation: moveUp 1s; }
 
 .bmi__calcbox {
-  max-width: 45%;
+  max-width: 65rem;
   padding: 4rem 4rem;
   border-radius: 2rem;
   background-color: #ffffff;
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 12rem;
+  right: 4rem;
   box-shadow: 2rem 0 8rem rgba(37, 51, 71, 0.15);
   overflow: hidden;
   animation: slideLeft 1s;
@@ -89,79 +87,105 @@ body {
     font-size: 2.4rem;
     font-weight: 600;
     color: #253347; }
-  .bmi__calcbox .form {
-    font-family: inherit; }
-    .bmi__calcbox .form__radio-group {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem; }
-      .bmi__calcbox .form__radio-group .radio__group .radio__input {
-        display: none; }
-      .bmi__calcbox .form__radio-group .radio__group .radio__label {
-        font-size: 1.4rem;
-        font-weight: 700;
-        text-align: center;
-        color: #253347;
-        cursor: pointer;
-        position: relative;
-        padding-left: 4rem; }
-        .bmi__calcbox .form__radio-group .radio__group .radio__label .radio__btn {
-          display: inline-block;
-          height: 2.4rem;
-          width: 2.4rem;
-          border-radius: 50%;
-          border: 0.1rem solid #d8e2e7;
-          position: absolute;
-          left: 0;
-          top: -0.4rem; }
-          .bmi__calcbox .form__radio-group .radio__group .radio__label .radio__btn:hover {
-            border: 0.1rem solid #345ff6; }
-          .bmi__calcbox .form__radio-group .radio__group .radio__label .radio__btn::after {
-            content: "";
-            display: block;
-            height: 1.2rem;
-            width: 1.2rem;
-            border-radius: 50%;
-            background-color: #345ff6;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.3s; }
-      .bmi__calcbox .form__radio-group .radio__group .radio__input:checked + .radio__label .radio__btn {
-        background-color: #d8e2e7; }
-      .bmi__calcbox .form__radio-group .radio__group .radio__input:checked + .radio__label .radio__btn::after {
-        opacity: 1; }
-    .bmi__calcbox .form__input-group {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); }
-      .bmi__calcbox .form__input-group .input__group {
-        display: inline-block; }
-        .bmi__calcbox .form__input-group .input__group .input__type {
-          max-width: 70%;
+  .bmi__calcbox .form__radio {
+    font-family: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; }
+    .bmi__calcbox .form__radio .radio__group .radio__input {
+      display: none; }
+    .bmi__calcbox .form__radio .radio__group .radio__label {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: #253347;
+      cursor: pointer;
+      position: relative;
+      padding-left: 4rem; }
+      .bmi__calcbox .form__radio .radio__group .radio__label .radio__btn {
+        display: inline-block;
+        height: 2.4rem;
+        width: 2.4rem;
+        border-radius: 50%;
+        border: 0.1rem solid #d8e2e7;
+        position: absolute;
+        left: 0;
+        top: -0.4rem; }
+        .bmi__calcbox .form__radio .radio__group .radio__label .radio__btn:hover {
+          border: 0.1rem solid #345ff6; }
+        .bmi__calcbox .form__radio .radio__group .radio__label .radio__btn::after {
+          content: "";
           display: block;
-          font-family: inherit;
-          font-size: 2rem;
-          font-weight: 700;
-          text-indent: 2rem;
-          margin-top: 1rem;
-          padding: 1.8rem 0;
-          border-radius: 0.6rem;
-          border: 0.1rem solid #d8e2e7;
-          cursor: pointer; }
-          .bmi__calcbox .form__input-group .input__group .input__type:hover, .bmi__calcbox .form__input-group .input__group .input__type:focus, .bmi__calcbox .form__input-group .input__group .input__type:focus-visible {
-            border: 0.1rem solid #345ff6; }
-          .bmi__calcbox .form__input-group .input__group .input__type::placeholder {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #d8e2e7; }
-        .bmi__calcbox .form__input-group .input__group .input__label {
-          font-size: 1.4rem;
-          font-weight: 400;
-          color: #5e6e85; }
+          height: 1.2rem;
+          width: 1.2rem;
+          border-radius: 50%;
+          background-color: #345ff6;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s; }
+    .bmi__calcbox .form__radio .radio__group .radio__input:checked + .radio__label .radio__btn {
+      background-color: #d8e2e7; }
+    .bmi__calcbox .form__radio .radio__group .radio__input:checked + .radio__label .radio__btn::after {
+      opacity: 1; }
+  .bmi__calcbox .form__metric,
+  .bmi__calcbox .form__imperial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    margin-bottom: 2rem; }
+    .bmi__calcbox .form__metric-height .input__label,
+    .bmi__calcbox .form__metric-height .input__label-invisible, .bmi__calcbox .form__metric-weight .input__label,
+    .bmi__calcbox .form__metric-weight .input__label-invisible,
+    .bmi__calcbox .form__imperial-height .input__label,
+    .bmi__calcbox .form__imperial-height .input__label-invisible,
+    .bmi__calcbox .form__imperial-weight .input__label,
+    .bmi__calcbox .form__imperial-weight .input__label-invisible {
+      position: relative;
+      display: block;
+      font-size: 1.6rem;
+      color: #5e6e85;
+      font-weight: 400;
+      margin-bottom: 1rem; }
+    .bmi__calcbox .form__metric-height .input__label-invisible, .bmi__calcbox .form__metric-weight .input__label-invisible,
+    .bmi__calcbox .form__imperial-height .input__label-invisible,
+    .bmi__calcbox .form__imperial-weight .input__label-invisible {
+      opacity: 0; }
+    .bmi__calcbox .form__metric-height .input__type, .bmi__calcbox .form__metric-weight .input__type,
+    .bmi__calcbox .form__imperial-height .input__type,
+    .bmi__calcbox .form__imperial-weight .input__type {
+      box-sizing: border-box;
+      width: 100%;
+      font-family: inherit;
+      font-size: 2rem;
+      font-weight: 700;
+      text-indent: 2rem;
+      padding: 1.8rem 0;
+      border-radius: 0.6rem;
+      border: 0.1rem solid #d8e2e7;
+      cursor: pointer; }
+      .bmi__calcbox .form__metric-height .input__type:hover, .bmi__calcbox .form__metric-height .input__type:focus, .bmi__calcbox .form__metric-height .input__type:focus-visible, .bmi__calcbox .form__metric-weight .input__type:hover, .bmi__calcbox .form__metric-weight .input__type:focus, .bmi__calcbox .form__metric-weight .input__type:focus-visible,
+      .bmi__calcbox .form__imperial-height .input__type:hover,
+      .bmi__calcbox .form__imperial-height .input__type:focus,
+      .bmi__calcbox .form__imperial-height .input__type:focus-visible,
+      .bmi__calcbox .form__imperial-weight .input__type:hover,
+      .bmi__calcbox .form__imperial-weight .input__type:focus,
+      .bmi__calcbox .form__imperial-weight .input__type:focus-visible {
+        border: 0.1rem solid #345ff6; }
+      .bmi__calcbox .form__metric-height .input__type::placeholder, .bmi__calcbox .form__metric-weight .input__type::placeholder,
+      .bmi__calcbox .form__imperial-height .input__type::placeholder,
+      .bmi__calcbox .form__imperial-weight .input__type::placeholder {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #d8e2e7; }
+    .bmi__calcbox .form__metric .input__btn,
+    .bmi__calcbox .form__imperial .input__btn {
+      display: none; }
   .bmi__calcbox .result__box {
     padding: 2.4rem 4rem;
+    border-radius: 0.6rem;
     background-color: #345ff6;
     color: #ffffff; }
     .bmi__calcbox .result__box .display__box {
@@ -189,7 +213,6 @@ body {
       font-size: 1.6rem; }
 
 .section__result-analysis .wrapper {
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem; }
@@ -198,7 +221,7 @@ body {
     .section__result-analysis .wrapper__img-container .image {
       height: 50rem; }
   .section__result-analysis .wrapper__analysis-container {
-    padding: 8rem;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -220,16 +243,68 @@ body {
   margin: 8rem 0;
   background-color: #d8e2e7; }
   .section__guidelines-container {
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem; }
     .section__guidelines-container .guideline__item {
-      padding: 0 2rem; }
+      padding: 0 4rem; }
       .section__guidelines-container .guideline__item-heading {
         font-size: 2.4rem;
         font-weight: 500;
         color: #253347; }
       .section__guidelines-container .guideline__item-description {
+        font-size: 1.6rem;
+        color: #5e6e85; }
+
+.section__limitations {
+  padding: 0 4rem;
+  height: 115vh; }
+  .section__limitations-container {
+    padding: inherit; }
+  .section__limitations .limitations__intro-container {
+    max-width: 60.8rem;
+    margin-bottom: 8rem; }
+    .section__limitations .limitations__intro-container .limitations__heading {
+      font-size: 4.8rem;
+      color: #253347; }
+    .section__limitations .limitations__intro-container .limitations__description {
+      font-size: 1.6rem;
+      color: #5e6e85;
+      line-height: 1.5; }
+  .section__limitations .limitations__cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+    position: relative; }
+    .section__limitations .limitations__cards-container .limitations__cards-container > * {
+      max-width: 38rem; }
+    .section__limitations .limitations__cards-container .card {
+      padding: 2rem 2.4rem;
+      box-shadow: 1rem 0 4rem rgba(37, 51, 71, 0.15);
+      border-radius: 2rem; }
+      .section__limitations .limitations__cards-container .card:nth-child(1), .section__limitations .limitations__cards-container .card:nth-child(2), .section__limitations .limitations__cards-container .card:nth-child(3), .section__limitations .limitations__cards-container .card:nth-child(4), .section__limitations .limitations__cards-container .card:nth-child(5) {
+        max-width: 38rem;
+        position: absolute; }
+      .section__limitations .limitations__cards-container .card:nth-child(1) {
+        top: -22rem;
+        right: 10rem; }
+      .section__limitations .limitations__cards-container .card:nth-child(2) {
+        right: 43rem; }
+      .section__limitations .limitations__cards-container .card:nth-child(3) {
+        right: 2rem; }
+      .section__limitations .limitations__cards-container .card:nth-child(5) {
+        top: 20rem;
+        right: 14rem; }
+      .section__limitations .limitations__cards-container .card:nth-child(4) {
+        top: 20rem;
+        right: 55rem; }
+      .section__limitations .limitations__cards-container .card__intro-container {
+        display: flex;
+        gap: 1.8rem;
+        align-items: center; }
+      .section__limitations .limitations__cards-container .card__heading {
+        font-size: 1.8rem;
+        color: #253347; }
+      .section__limitations .limitations__cards-container .card__description-text {
         font-size: 1.6rem;
         color: #5e6e85; }

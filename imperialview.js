@@ -1,65 +1,57 @@
 class ImperialView {
-  #parentElement = document.querySelector(".form__input-group");
-  #imperialBtnElement = document.querySelector(".form__radio-group");
+  #inputContainer = document.querySelector(".input__container");
+  #formRadio = document.querySelector(".form__radio");
 
-  handleCheck(handler) {
-    this.#imperialBtnElement.addEventListener("click", handler);
+  #getHTML() {
+    const html = `
+        <form action="#" class="form__imperial" id="imperial__form">
+          <div class="form__imperial-height">
+            <label class="input__label" for="foot">Height</label>
+            <input type="text" class="input__type" id="foot" name='foot' placeholder="0" />
+          </div>
+
+          <div class="form__imperial-height">
+            <label class="input__label-invisible" for="inch">Inch</label>
+            <input type="text" class="input__type"  id="inch" name='inch' placeholder="0" />
+          </div>
+
+          <div class="form__imperial-height">
+            <label class="input__label" for="stone">Weight</label>
+            <input type="text" class="input__type"  id="stone" name='stone' placeholder="0" />
+          </div>
+          <div class="form__imperial-height">
+            <label class="input__label-invisible"  for="pounds">Pounds</label>
+            <input
+              type="text"
+              class="input__type"
+              id="pounds"
+              name='pounds'
+              placeholder="0"
+            />
+          </div>
+          <input class="input__btn" type="submit" />
+      </form>`;
+
+    return html;
   }
 
   render() {
     const viewHTML = this.#getHTML();
-    this.#parentElement.innerHTML = "";
-    this.#parentElement.insertAdjacentHTML("beforeend", viewHTML);
+    this.#inputContainer.insertAdjacentHTML("beforeend", viewHTML);
+    return this;
   }
 
-  #getHTML() {
-    const html = `
-      <div class="input__group">
-        <label class="input__label" for="height">Height</label>
-        <input
-          type="text"
-          class="input__type"
-          id="height"
-          placeholder="0"
-          required
-        />
-        <span class="input__unit-height">ft</span>
-      </div>
-      <div class="input__group">
-        <label class="input__label-invisible" for="height">Height</label>
-        <input
-          type="text"
-          class="input__type"
-          id="height"
-          placeholder="0"
-          required
-        />
-        <span class="input__unit-height">in</span>
-      </div>
-      <div class="input__group">
-        <label class="input__label" for="weight">Weight</label>
-        <input
-          type="text"
-          class="input__type"
-          id="weight"
-          placeholder="0"
-          required
-        />
-        <span class="input__unit-weight">st</span>
-      </div>
-      <div class="input__group">
-        <label class="input__label-invisible" for="weight">Weight</label>
-        <input
-          type="text"
-          class="input__type"
-          id="weight"
-          placeholder="0"
-          required
-        />
-        <span class="input__unit-weight">lbs</span>
-    </div>`;
+  handleSubmit(handler) {
+    this.#inputContainer.addEventListener("submit", handler);
+  }
 
-    return html;
+  clearContent() {
+    this.#inputContainer.innerHTML = "";
+    return this;
+  }
+
+  handleCheck(handler) {
+    this.#formRadio.addEventListener("click", handler);
   }
 }
 

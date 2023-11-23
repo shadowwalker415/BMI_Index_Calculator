@@ -1,7 +1,7 @@
 .header__main {
-  max-width: 70%;
+  max-width: 100rem;
   margin-left: 2rem;
-  padding: 4rem 8rem;
+  padding: 4rem 4rem;
   height: 100vh;
   background-image: linear-gradient(
     to bottom right,
@@ -24,6 +24,7 @@
 
   &-text-main {
     font-size: 1.6rem;
+    line-height: 1.5;
     color: $color-dark-electric-blue;
     animation: moveUp 1s;
   }

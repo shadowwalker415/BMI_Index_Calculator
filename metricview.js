@@ -1,42 +1,55 @@
 class MetricView {
-  #parentElement = document.querySelector(".form__input-group");
-  #metricBtnElement = document.querySelector(".form__radio-group");
-
-  render() {
-    const viewHTML = this.#getHTML();
-    this.#parentElement.innerHTML = "";
-    this.#parentElement.insertAdjacentHTML("beforeend", viewHTML);
-  }
-
-  handleEvent(handler) {
-    this.#metricBtnElement.addEventListener("click", handler);
-  }
+  #inputContainer = document.querySelector(".input__container");
+  #formRadio = document.querySelector(".form__radio");
 
   #getHTML() {
     const html = `
-        <div class="input__group">
-        <label class="input__label" for="height">Height</label>
-        <input
-          type="text"
-          class="input__type"
-          id="height"
-          placeholder="0"
-        />
-        <span class="input__unit-height">cm</span>
-      </div>
-      <div class="input__group">
-        <label class="input__label" for="weight">Weight</label>
-        <input
-          type="text"
-          class="input__type"
-          id="weight"
-          placeholder="0"
-        />
-        <span class="input__unit-weight">kg</span>
-      </div>
-    `;
-
+      <form action="#" class="form__metric" id="metric__form">
+          <div class="form__metric-height" >
+            <label class="input__label" for="height">Height</label>
+            <input
+              type="text"
+              class="input__type"
+              id="height"
+              name="height"
+              placeholder="0"
+              required
+            />
+          </div>
+          <div class="form__metric-weight">
+            <label class="input__label" for="weight">Weight</label>
+            <input
+              type="text"
+              class="input__type"
+              id="weight"
+              name="weight"
+              placeholder="0"
+              required
+            />
+          </div>
+          <input class="input__btn" type="submit" />
+      </form>
+        `;
     return html;
+  }
+
+  render() {
+    const viewHTML = this.#getHTML();
+    this.#inputContainer.insertAdjacentHTML("beforeend", viewHTML);
+    return this;
+  }
+
+  handleSubmit(handler) {
+    this.#inputContainer.addEventListener("submit", handler);
+  }
+
+  handleCheck(handler) {
+    this.#formRadio.addEventListener("click", handler);
+  }
+
+  clearContent() {
+    this.#inputContainer.innerHTML = "";
+    return this;
   }
 }
 

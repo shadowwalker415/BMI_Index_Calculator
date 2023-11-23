@@ -1,3 +1,13 @@
 @mixin centerDiv {
   margin: 0 auto;
 }
+
+@mixin fixedCardSize {
+  max-width: 38rem;
+}
+
+@mixin inputUnitStyle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-blue-dark;
+}
