@@ -50,6 +50,14 @@ body {
     transform: translateX(0);
     opacity: 1; } }
 
+@keyframes slideRight {
+  from {
+    transform: translateX(-50rem);
+    opacity: 0; }
+  to {
+    transform: translate(0);
+    opacity: 1; } }
+
 .header__main {
   max-width: 100rem;
   margin-left: 2rem;
@@ -192,14 +200,17 @@ body {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 5.2rem; }
-      .bmi__calcbox .result__box .display__box-result .result__tip {
-        margin-bottom: 2rem;
-        font-size: 1.6rem; }
-      .bmi__calcbox .result__box .display__box-result .bmi__result {
-        font-size: 5.2rem;
-        font-weight: 700; }
+      .bmi__calcbox .result__box .display__box-result {
+        animation: slideRight 0.2s; }
+        .bmi__calcbox .result__box .display__box-result .result__tip {
+          margin-bottom: 2rem;
+          font-size: 1.6rem; }
+        .bmi__calcbox .result__box .display__box-result .bmi__result {
+          font-size: 5.2rem;
+          font-weight: 700; }
       .bmi__calcbox .result__box .display__box-recommendation {
-        font-size: 1.6rem; }
+        font-size: 1.6rem;
+        animation: slideLeft 0.2s; }
         .bmi__calcbox .result__box .display__box-recommendation .bmi__recommendation {
           line-height: 1.5; }
         .bmi__calcbox .result__box .display__box-recommendation .min-bmi,
@@ -208,9 +219,22 @@ body {
           font-weight: 700; }
     .bmi__calcbox .result__box-welcome {
       font-size: 2.4rem;
+      font-weight: 600;
       margin-bottom: 1.6rem; }
     .bmi__calcbox .result__box-info {
       font-size: 1.6rem; }
+    .bmi__calcbox .result__box .error__box {
+      background-color: inherit;
+      color: #ffffff; }
+      .bmi__calcbox .result__box .error__box-subheading {
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        animation: moveDown 0.2s; }
+      .bmi__calcbox .result__box .error__box-message {
+        font-size: 1.6rem;
+        text-align: center;
+        animation: moveUp 0.2s; }
 
 .section__result-analysis .wrapper {
   display: grid;

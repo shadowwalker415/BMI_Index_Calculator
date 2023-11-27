@@ -30,3 +30,15 @@
     opacity: 1;
   }
 }
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

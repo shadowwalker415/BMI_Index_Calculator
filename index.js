@@ -6,6 +6,7 @@ import {
   calcImperial,
   getHeightInInches,
   getMetricIdealWeight,
+  getImperialIdealWeight,
 } from "./helpers";
 
 const init = function () {
@@ -59,7 +60,9 @@ const controlMetricSubmit = function (event) {
     const bmiResult = calcMetric(metricFormData).toFixed(1);
     const idealMetricWeight = getMetricIdealWeight(metricFormData);
     resultview.clearContent();
-    resultview.render(bmiResult, idealMetricWeight);
+    isNaN(metricFormData.height) || isNaN(metricFormData.weight)
+      ? resultview.renderError()
+      : resultview.render(bmiResult, idealMetricWeight);
   } else {
     return;
   }
@@ -80,8 +83,19 @@ const controlImperialSubmit = function (event) {
     event.target.children[1].firstElementChild.nextElementSibling.value = "";
     event.target.children[2].firstElementChild.nextElementSibling.value = "";
     event.target.children[3].firstElementChild.nextElementSibling.value = "";
+    const bmiResult = calcImperial(imperialFormData).toFixed(1);
+    const height = getHeightInInches(imperialFormData);
+    const idealImperialWeight = getImperialIdealWeight(height);
     console.log(imperialFormData);
-    return imperialFormData;
+    resultview.clearContent();
+    isNaN(imperialFormData.foot) ||
+    isNaN(imperialFormData.inch) ||
+    isNaN(imperialFormData.stone) ||
+    isNaN(imperialFormData.pounds)
+      ? resultview.renderError()
+      : resultview.render(bmiResult, idealImperialWeight);
+  } else {
+    return;
   }
 };
 

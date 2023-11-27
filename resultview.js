@@ -8,8 +8,14 @@ class ResultsView {
    * @returns this
    */
   render(bmiResult, idealWeight) {
-    const viewHTML = this.#getHTML(bmiResult, idealWeight);
+    const viewHTML = this.#getResultHTML(bmiResult, idealWeight);
     this.#parentElement.insertAdjacentHTML("beforeend", viewHTML);
+    return this;
+  }
+
+  renderError() {
+    const errorHTML = this.#getErrorHMTL();
+    this.#parentElement.insertAdjacentHTML("beforeend", errorHTML);
     return this;
   }
 
@@ -24,7 +30,7 @@ class ResultsView {
    * @param {Object} idealWeight
    * @returns Dynamic HMTL String
    */
-  #getHTML(bmiResult, idealWeight) {
+  #getResultHTML(bmiResult, idealWeight) {
     const html = `
         <div class="display__box">
             <div class="display__box-result">
@@ -46,6 +52,21 @@ class ResultsView {
             </div>
         </div>
       `;
+    return html;
+  }
+
+  #getErrorHMTL() {
+    const html = `
+       <div class="error__box children_margin-bottom">
+          <p class="error__box-subheading">Invalid Input Type😣</p>
+          <p class="error__box-message">
+            Your input must be valid to see your BMI result. That is, your weight and
+            height input values must be valid real world values to get a correct BMI
+            result.
+          </p>
+        </div>
+
+    `;
     return html;
   }
 }

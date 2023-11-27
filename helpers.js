@@ -48,7 +48,7 @@ export const getHeightInInches = function ({ foot, inch }) {
 /**
  *
  * @param {Object} param0 A JavaScript Object
- * @returns A JavaScript Object with properties minLimitWeight & maxLimitWeight
+ * @returns A JavaScript Object with properties minLimitWeight,  maxLimitWeight and isMetric
  */
 export const getMetricIdealWeight = function ({ height }) {
   if (height === 0 || height > 300 || height < 0 || height === NaN) return;
@@ -60,4 +60,21 @@ export const getMetricIdealWeight = function ({ height }) {
     isMetric: true,
   };
   return metricIdealWeight;
+};
+
+/**
+ *
+ * @param {Number} height
+ * @returns A JavaScript Object with properties minLimitWeight, maxLimitWeight and isImperial
+ */
+export const getImperialIdealWeight = function (height) {
+  if (height <= 0 || height === NaN) return;
+  const minWeight = (18.5 * height ** 2) / 703;
+  const maxWeight = (24.9 * height ** 2) / 703;
+  const imperialIdealWeight = {
+    minLimitWeight: minWeight.toFixed(1),
+    maxLimitWeight: maxWeight.toFixed(1),
+    isImperial: true,
+  };
+  return imperialIdealWeight;
 };

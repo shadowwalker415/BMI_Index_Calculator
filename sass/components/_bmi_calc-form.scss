@@ -144,6 +144,7 @@
       gap: 5.2rem;
 
       &-result {
+        animation: slideRight 0.2s;
         .result__tip {
           margin-bottom: 2rem;
           font-size: $body-text-size;
@@ -157,6 +158,7 @@
 
       &-recommendation {
         font-size: $body-text-size;
+        animation: slideLeft 0.2s;
 
         .bmi__recommendation {
           line-height: 1.5;
@@ -172,11 +174,30 @@
 
     &-welcome {
       font-size: $heading-tertiary-size;
+      font-weight: 600;
       margin-bottom: 1.6rem;
     }
 
     &-info {
       font-size: $body-text-size;
+    }
+
+    .error__box {
+      background-color: inherit;
+      color: $color-white;
+
+      &-subheading {
+        font-size: $heading-tertiary-size;
+        font-weight: 600;
+        text-align: center;
+        animation: moveDown 0.2s;
+      }
+
+      &-message {
+        font-size: $body-text-size;
+        text-align: center;
+        animation: moveUp 0.2s;
+      }
     }
   }
 }
