@@ -15,6 +15,7 @@ class MetricView {
               placeholder="0"
               required
             />
+            <div class="cm__container"><span class="cm">cm</span></div>
           </div>
           <div class="form__metric-weight">
             <label class="input__label" for="weight">Weight</label>
@@ -26,6 +27,7 @@ class MetricView {
               placeholder="0"
               required
             />
+            <div class="kg__container"><span class="kg">kg</span></div>
           </div>
           <input class="input__btn" type="submit" />
       </form>

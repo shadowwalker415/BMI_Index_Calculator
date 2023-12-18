@@ -4,6 +4,18 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
+    @include respond(tab_port) {
+      margin-top: 30rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 60rem;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+
     &__img-container {
       @include centerDiv;
       .image {
@@ -18,6 +30,10 @@
       justify-content: center;
       align-items: center;
       gap: 2.4rem;
+
+      @include respond(phone) {
+        padding: 4rem 1.8rem;
+      }
 
       .analysis__heading {
         margin-top: 10rem;
@@ -41,13 +57,48 @@
   margin: 8rem 0;
   background-color: $color-light-blue;
 
+  @include respond(phone) {
+    padding: 3.2rem 0.8rem;
+  }
+
   &-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem;
 
+    @include respond(tab_port) {
+      grid-template-columns: 1fr;
+    }
+
     .guideline__item {
       padding: 0 4rem;
+
+      @include respond(phone) {
+        padding: 0 1.8rem;
+      }
+
+      &-logo {
+        @include respond(tab_port) {
+          float: left;
+          @include clearFix;
+        }
+
+        @include respond(phone) {
+          float: none;
+        }
+      }
+
+      &-heading,
+      &-description {
+        @include respond(tab_port) {
+          margin-left: 14rem;
+        }
+
+        @include respond(phone) {
+          margin-left: 0;
+        }
+      }
+
       &-heading {
         font-size: $heading-tertiary-size;
         font-weight: 500;
@@ -64,23 +115,44 @@
 
 .section__limitations {
   padding: 0 4rem;
-  height: 115vh;
+  height: 120vh;
+  @include respond(tab_port) {
+    height: 60vh;
+  }
+
+  @include respond(phone) {
+    padding: 0 1.8rem;
+  }
+
   &-container {
     padding: inherit;
   }
 
   .limitations__intro-container {
-    max-width: 60.8rem;
+    max-width: 50%;
     margin-bottom: 8rem;
+
+    @include respond(tab_port) {
+      @include centerDiv;
+      max-width: 100%;
+      margin-bottom: 10rem;
+    }
+
     .limitations__heading {
       font-size: $heading-secondary-size;
       color: $color-black;
+      @include respond(tab_port) {
+        text-align: center;
+      }
     }
 
     .limitations__description {
       font-size: $body-text-size;
       color: $color-dark-electric-blue;
       line-height: 1.5;
+      @include respond(tab_port) {
+        text-align: center;
+      }
     }
   }
 
@@ -90,9 +162,19 @@
     gap: 2.8rem;
     position: relative;
 
-    .limitations__cards-container > * {
-      max-width: 38rem;
+    @include respond(tab_port) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      position: relative;
     }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+    }
+
+    // .limitations__cards-container > * {
+    //   max-width: 38rem;
+    // }
 
     .card {
       padding: 2rem 2.4rem;
@@ -106,6 +188,25 @@
       &:nth-child(5) {
         @include fixedCardSize;
         position: absolute;
+
+        @include respond(tab_land) {
+          position: absolute;
+        }
+
+        @include respond(tab_port) {
+          position: static;
+          max-width: 100%;
+        }
+      }
+
+      &:nth-child(5) {
+        @include respond(tab_port) {
+          transform: translateX(50%);
+        }
+
+        @include respond(phone) {
+          transform: translateX(0);
+        }
       }
 
       &:nth-child(1) {

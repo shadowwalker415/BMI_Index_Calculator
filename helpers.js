@@ -5,9 +5,14 @@
  */
 
 export const calcMetric = function ({ weight, height }) {
-  if (weight === 0 || height === 0 || weight === NaN || height === NaN) return;
-  if (weight < 0 || height < 0) return;
-  if (weight > 200 || height > 300) return;
+  if (weight === 0 || height === 0)
+    throw new Error("Neither height nor weight can be 0");
+  if (isNaN(weight) || isNaN(height))
+    throw new Error("Height & weight must both be numbers and not letters");
+  if (weight < 0 || height < 0)
+    throw new Error("Height or weight cannot be negative numbers");
+  if (weight > 200 || height > 300)
+    throw new Error("Neither height nor weight can be extreme numbers");
   return weight / (height / 100) ** 2;
 };
 
@@ -17,9 +22,13 @@ export const calcMetric = function ({ weight, height }) {
  * @returns  Number
  */
 export const calcImperial = function ({ foot, inch, stone, pounds }) {
-  if (foot === NaN || inch === NaN || stone === NaN || pounds === NaN) return;
-  if (foot <= 0 || stone <= 0 || pounds <= 0 || inch < 0) return;
-  if (pounds > 1000 || stone > 1000 || foot > 100 || inch > 11) return;
+  if (isNaN(foot) || isNaN(inch) || isNaN(stone) || isNaN(pounds))
+    throw new Error("All inputs must be numbers and not letters");
+  if (foot <= 0 || stone <= 0 || pounds <= 0)
+    throw new Error("Neither foot, stone nor pounds can be 0 or less than 0 ");
+  if (inch < 0) throw new Error("Inch cannot be less than 0");
+  if (pounds > 1000 || stone > 1000 || foot > 100 || inch > 11)
+    throw new Error("Neither input can be extreme numbers");
   const weightInPounds = stone * 14 + pounds;
   const heightInInches = foot * 12 + inch;
   if (weightInPounds === 0 || (weightInPounds < 50 && heightInInches > 80))

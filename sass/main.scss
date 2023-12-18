@@ -1,12 +1,8 @@
-@import "base/base";
-
-@import "abstracts/utilities";
-@import "abstracts/variables";
 @import "abstracts/mixins";
+@import "base/base";
+@import "abstracts/variables";
+@import "abstracts/utilities";
 @import "abstracts/animations";
-
-@import "layout/header";
-
 @import "components/bmi_calc-form";
-
+@import "layout/header";
 @import "pages/home";

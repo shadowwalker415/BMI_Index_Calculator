@@ -13,8 +13,8 @@ class ResultsView {
     return this;
   }
 
-  renderError() {
-    const errorHTML = this.#getErrorHMTL();
+  renderError(errorMessage) {
+    const errorHTML = this.#getErrorHMTL(errorMessage);
     this.#parentElement.insertAdjacentHTML("beforeend", errorHTML);
     return this;
   }
@@ -55,14 +55,12 @@ class ResultsView {
     return html;
   }
 
-  #getErrorHMTL() {
+  #getErrorHMTL(errorMessage) {
     const html = `
        <div class="error__box children_margin-bottom">
-          <p class="error__box-subheading">Invalid Input Type😣</p>
+          <p class="error__box-subheading">Error! 😣</p>
           <p class="error__box-message">
-            Your input must be valid to see your BMI result. That is, your weight and
-            height input values must be valid real world values to get a correct BMI
-            result.
+          ${errorMessage}
           </p>
         </div>
 

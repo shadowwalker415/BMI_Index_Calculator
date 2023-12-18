@@ -2,6 +2,11 @@
   margin: 0 auto;
 }
 
+@mixin clearFix {
+  content: "";
+  clear: both;
+}
+
 @mixin fixedCardSize {
   max-width: 38rem;
 }
@@ -10,4 +15,24 @@
   font-size: 2rem;
   font-weight: 700;
   color: $color-blue-dark;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tab_land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab_port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 37.75em) {
+      @content;
+    }
+  }
 }

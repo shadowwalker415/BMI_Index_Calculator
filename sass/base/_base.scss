@@ -1,5 +1,13 @@
 html {
   font-size: 62.5%;
+
+  @include respond(tab_land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab_port) {
+    font-size: 50%;
+  }
 }
 
 *,

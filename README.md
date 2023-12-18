@@ -27,24 +27,23 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-![](images/screenshot1.png)
-![](images/screenshot2.png)
-![](images/screenshot3.png)
-![](images/screenshot4.png)
-![](images/screenshot5.png)
+![User inputing metric values](images/screenshot1.png)
+![BMI metric result](images/screenshot2.png)
+![User inputing imperial values](images/screenshot3.png)
+![BMI imperial result](images/screenshot4.png)
+![Error sample](images/screenshot5.png)
 ![](images/screenshot6.png)
 ![](images/screenshot7.png)
 ![](images/screenshot8.png)
 
 ### Links
 
-- Solution URL: [](https://github.com/shadowwalker415/BMI_Index_Calculator)
-- Live Site URL: [](https://your-live-site-url.com)
+- Solution URL: [My Solution](https://github.com/shadowwalker415/BMI_Index_Calculator)
+- Live Site URL: [Live Site](https://your-live-site-url.com)
 
 ## My process
 
-I used a top to bottom approach on the challenge which meant, I started from the mockup and styling of the top most components. After that I continued with the mockup and styling of the bottom sections of the project. However, I left out some of the styling and even the responsiveness of the app for the later part of the process. I then wrote the JavaScript for the BMI Index calculation functionality since most of the radio button interactivity was already done with Sass. I created seperate JavaScript files for there different views to be rendered dynamically when the radio buttons are checked and when the user submits the input entered in the input forms. Then one main JavaScript file "index.js" used as the control to handle the events of these different views. This was more of like using the MVC pattern but without the model where the state of the application resides. Lastly, the was a "helper.js" JavaScript file which was were all the functions for calculating the metric units, imperial units and getting the ideal weight ranges for both measurement units resided.
+I used a top to bottom approach to complete the challenge. I started from the mockup and styling of the top most components, and after that I continued with the mockup and styling of the bottom sections of the project. However, I left out some of the styling and even the responsiveness of the app for the later part of the process. I then wrote the JavaScript for the BMI Index calculation functionality since most of the radio button interactivity was already done with Sass. I created seperate JavaScript files for there different views to be rendered dynamically when the radio buttons are checked and when the user submits the input entered in the input forms. Then one main JavaScript file "index.js" used as the control to handle the events of these different views. This was more of like using the MVC pattern but without the model where the state of the application resides. Lastly, the was a "helper.js" JavaScript file which was were all the functions for calculating the metric units, imperial units and getting the ideal weight ranges for both measurement units resided.
 
 ### Built with
 

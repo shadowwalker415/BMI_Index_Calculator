@@ -1,5 +1,5 @@
 .bmi__calcbox {
-  max-width: 65rem;
+  max-width: 50%;
   padding: 4rem 4rem;
   border-radius: 2rem;
   background-color: $color-white;
@@ -7,9 +7,18 @@
   top: 12rem;
   right: 4rem;
   box-shadow: 2rem 0 8rem rgba($color-black, 0.15);
-  overflow: hidden;
-  animation: slideLeft 1s;
-  backface-visibility: hidden;
+
+  @include respond(tab_port) {
+    max-width: 100%;
+    top: 48rem;
+    right: 15rem;
+  }
+
+  @include respond(phone) {
+    max-width: 80%;
+    top: 60rem;
+    right: 5rem;
+  }
 
   &-heading {
     font-size: $heading-tertiary-size;
@@ -89,7 +98,6 @@
     &-weight {
       .input__label,
       .input__label-invisible {
-        position: relative;
         display: block;
         font-size: $body-text-size;
         color: $color-dark-electric-blue;
@@ -125,10 +133,62 @@
           color: $color-light-blue;
         }
       }
+
+      .cm__container,
+      .kg__container,
+      .foot__container,
+      .inch__container,
+      .stone__container,
+      .pounds__container {
+        position: relative;
+        .cm,
+        .kg,
+        .ft,
+        .in,
+        .st,
+        .lbs {
+          position: absolute;
+          font-size: 2rem;
+          font-weight: 700;
+          color: $color-blue-dark;
+          top: -4.6rem;
+          left: 22rem;
+        }
+
+        .cm,
+        .kg {
+          @include respond(tab_port) {
+            left: 25rem;
+          }
+
+          @include respond(phone) {
+            left: 28.4rem;
+          }
+        }
+
+        .ft,
+        .in,
+        .st,
+        .lbs {
+          @include respond(tab_port) {
+            left: 24rem;
+          }
+
+          @include respond(phone) {
+            left: 10rem;
+          }
+        }
+      }
     }
 
     .input__btn {
       display: none;
+    }
+  }
+
+  .form__metric {
+    @include respond(phone) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -143,8 +203,15 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 5.2rem;
 
+      @include respond(phone) {
+        grid-template-columns: 1fr;
+      }
+
       &-result {
         animation: slideRight 0.2s;
+        @include respond(phone) {
+          animation: moveDown 0.2s;
+        }
         .result__tip {
           margin-bottom: 2rem;
           font-size: $body-text-size;
@@ -159,6 +226,10 @@
       &-recommendation {
         font-size: $body-text-size;
         animation: slideLeft 0.2s;
+
+        @include respond(phone) {
+          animation: moveUp 0.2s;
+        }
 
         .bmi__recommendation {
           line-height: 1.5;

@@ -1,8 +1,8 @@
 .header__main {
-  max-width: 100rem;
+  max-width: 70%;
   margin-left: 2rem;
   padding: 4rem 4rem;
-  height: 100vh;
+  height: 90vh;
   background-image: linear-gradient(
     to bottom right,
     $color-white,
@@ -11,8 +11,35 @@
   border-radius: 0 0 4rem 4rem;
   position: relative;
 
+  @include respond(tab_port) {
+    height: 50vh;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 4rem 8rem;
+  }
+
+  @include respond(phone) {
+    height: 70vh;
+  }
+
+  &-logo {
+    @include respond(tab_port) {
+      text-align: center;
+    }
+  }
+
+  .logo {
+    @include respond(tab_port) {
+      width: 6rem;
+    }
+  }
+
   &-textbox {
     max-width: 60%;
+
+    @include respond(tab_port) {
+      max-width: 100%;
+    }
   }
 
   &-heading-main {
@@ -20,6 +47,10 @@
     font-weight: 600;
     color: $color-black;
     animation: moveDown 1s;
+
+    @include respond(tab_port) {
+      text-align: center;
+    }
   }
 
   &-text-main {
@@ -27,5 +58,9 @@
     line-height: 1.5;
     color: $color-dark-electric-blue;
     animation: moveUp 1s;
+
+    @include respond(tab_port) {
+      text-align: center;
+    }
   }
 }

@@ -1,5 +1,11 @@
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 *,
 *::after,
@@ -58,39 +64,25 @@ body {
     transform: translate(0);
     opacity: 1; } }
 
-.header__main {
-  max-width: 100rem;
-  margin-left: 2rem;
-  padding: 4rem 4rem;
-  height: 100vh;
-  background-image: linear-gradient(to bottom right, #ffffff, #d8e2e7);
-  border-radius: 0 0 4rem 4rem;
-  position: relative; }
-  .header__main-textbox {
-    max-width: 60%; }
-  .header__main-heading-main {
-    font-size: 4.8rem;
-    font-weight: 600;
-    color: #253347;
-    animation: moveDown 1s; }
-  .header__main-text-main {
-    font-size: 1.6rem;
-    line-height: 1.5;
-    color: #5e6e85;
-    animation: moveUp 1s; }
-
 .bmi__calcbox {
-  max-width: 65rem;
+  max-width: 50%;
   padding: 4rem 4rem;
   border-radius: 2rem;
   background-color: #ffffff;
   position: absolute;
   top: 12rem;
   right: 4rem;
-  box-shadow: 2rem 0 8rem rgba(37, 51, 71, 0.15);
-  overflow: hidden;
-  animation: slideLeft 1s;
-  backface-visibility: hidden; }
+  box-shadow: 2rem 0 8rem rgba(37, 51, 71, 0.15); }
+  @media (max-width: 56.25em) {
+    .bmi__calcbox {
+      max-width: 100%;
+      top: 48rem;
+      right: 15rem; } }
+  @media (max-width: 37.75em) {
+    .bmi__calcbox {
+      max-width: 80%;
+      top: 60rem;
+      right: 5rem; } }
   .bmi__calcbox-heading {
     font-size: 2.4rem;
     font-weight: 600;
@@ -151,7 +143,6 @@ body {
     .bmi__calcbox .form__imperial-height .input__label-invisible,
     .bmi__calcbox .form__imperial-weight .input__label,
     .bmi__calcbox .form__imperial-weight .input__label-invisible {
-      position: relative;
       display: block;
       font-size: 1.6rem;
       color: #5e6e85;
@@ -188,9 +179,477 @@ body {
         font-size: 2rem;
         font-weight: 700;
         color: #d8e2e7; }
+    .bmi__calcbox .form__metric-height .cm__container,
+    .bmi__calcbox .form__metric-height .kg__container,
+    .bmi__calcbox .form__metric-height .foot__container,
+    .bmi__calcbox .form__metric-height .inch__container,
+    .bmi__calcbox .form__metric-height .stone__container,
+    .bmi__calcbox .form__metric-height .pounds__container, .bmi__calcbox .form__metric-weight .cm__container,
+    .bmi__calcbox .form__metric-weight .kg__container,
+    .bmi__calcbox .form__metric-weight .foot__container,
+    .bmi__calcbox .form__metric-weight .inch__container,
+    .bmi__calcbox .form__metric-weight .stone__container,
+    .bmi__calcbox .form__metric-weight .pounds__container,
+    .bmi__calcbox .form__imperial-height .cm__container,
+    .bmi__calcbox .form__imperial-height .kg__container,
+    .bmi__calcbox .form__imperial-height .foot__container,
+    .bmi__calcbox .form__imperial-height .inch__container,
+    .bmi__calcbox .form__imperial-height .stone__container,
+    .bmi__calcbox .form__imperial-height .pounds__container,
+    .bmi__calcbox .form__imperial-weight .cm__container,
+    .bmi__calcbox .form__imperial-weight .kg__container,
+    .bmi__calcbox .form__imperial-weight .foot__container,
+    .bmi__calcbox .form__imperial-weight .inch__container,
+    .bmi__calcbox .form__imperial-weight .stone__container,
+    .bmi__calcbox .form__imperial-weight .pounds__container {
+      position: relative; }
+      .bmi__calcbox .form__metric-height .cm__container .cm,
+      .bmi__calcbox .form__metric-height .cm__container .kg,
+      .bmi__calcbox .form__metric-height .cm__container .ft,
+      .bmi__calcbox .form__metric-height .cm__container .in,
+      .bmi__calcbox .form__metric-height .cm__container .st,
+      .bmi__calcbox .form__metric-height .cm__container .lbs,
+      .bmi__calcbox .form__metric-height .kg__container .cm,
+      .bmi__calcbox .form__metric-height .kg__container .kg,
+      .bmi__calcbox .form__metric-height .kg__container .ft,
+      .bmi__calcbox .form__metric-height .kg__container .in,
+      .bmi__calcbox .form__metric-height .kg__container .st,
+      .bmi__calcbox .form__metric-height .kg__container .lbs,
+      .bmi__calcbox .form__metric-height .foot__container .cm,
+      .bmi__calcbox .form__metric-height .foot__container .kg,
+      .bmi__calcbox .form__metric-height .foot__container .ft,
+      .bmi__calcbox .form__metric-height .foot__container .in,
+      .bmi__calcbox .form__metric-height .foot__container .st,
+      .bmi__calcbox .form__metric-height .foot__container .lbs,
+      .bmi__calcbox .form__metric-height .inch__container .cm,
+      .bmi__calcbox .form__metric-height .inch__container .kg,
+      .bmi__calcbox .form__metric-height .inch__container .ft,
+      .bmi__calcbox .form__metric-height .inch__container .in,
+      .bmi__calcbox .form__metric-height .inch__container .st,
+      .bmi__calcbox .form__metric-height .inch__container .lbs,
+      .bmi__calcbox .form__metric-height .stone__container .cm,
+      .bmi__calcbox .form__metric-height .stone__container .kg,
+      .bmi__calcbox .form__metric-height .stone__container .ft,
+      .bmi__calcbox .form__metric-height .stone__container .in,
+      .bmi__calcbox .form__metric-height .stone__container .st,
+      .bmi__calcbox .form__metric-height .stone__container .lbs,
+      .bmi__calcbox .form__metric-height .pounds__container .cm,
+      .bmi__calcbox .form__metric-height .pounds__container .kg,
+      .bmi__calcbox .form__metric-height .pounds__container .ft,
+      .bmi__calcbox .form__metric-height .pounds__container .in,
+      .bmi__calcbox .form__metric-height .pounds__container .st,
+      .bmi__calcbox .form__metric-height .pounds__container .lbs, .bmi__calcbox .form__metric-weight .cm__container .cm,
+      .bmi__calcbox .form__metric-weight .cm__container .kg,
+      .bmi__calcbox .form__metric-weight .cm__container .ft,
+      .bmi__calcbox .form__metric-weight .cm__container .in,
+      .bmi__calcbox .form__metric-weight .cm__container .st,
+      .bmi__calcbox .form__metric-weight .cm__container .lbs,
+      .bmi__calcbox .form__metric-weight .kg__container .cm,
+      .bmi__calcbox .form__metric-weight .kg__container .kg,
+      .bmi__calcbox .form__metric-weight .kg__container .ft,
+      .bmi__calcbox .form__metric-weight .kg__container .in,
+      .bmi__calcbox .form__metric-weight .kg__container .st,
+      .bmi__calcbox .form__metric-weight .kg__container .lbs,
+      .bmi__calcbox .form__metric-weight .foot__container .cm,
+      .bmi__calcbox .form__metric-weight .foot__container .kg,
+      .bmi__calcbox .form__metric-weight .foot__container .ft,
+      .bmi__calcbox .form__metric-weight .foot__container .in,
+      .bmi__calcbox .form__metric-weight .foot__container .st,
+      .bmi__calcbox .form__metric-weight .foot__container .lbs,
+      .bmi__calcbox .form__metric-weight .inch__container .cm,
+      .bmi__calcbox .form__metric-weight .inch__container .kg,
+      .bmi__calcbox .form__metric-weight .inch__container .ft,
+      .bmi__calcbox .form__metric-weight .inch__container .in,
+      .bmi__calcbox .form__metric-weight .inch__container .st,
+      .bmi__calcbox .form__metric-weight .inch__container .lbs,
+      .bmi__calcbox .form__metric-weight .stone__container .cm,
+      .bmi__calcbox .form__metric-weight .stone__container .kg,
+      .bmi__calcbox .form__metric-weight .stone__container .ft,
+      .bmi__calcbox .form__metric-weight .stone__container .in,
+      .bmi__calcbox .form__metric-weight .stone__container .st,
+      .bmi__calcbox .form__metric-weight .stone__container .lbs,
+      .bmi__calcbox .form__metric-weight .pounds__container .cm,
+      .bmi__calcbox .form__metric-weight .pounds__container .kg,
+      .bmi__calcbox .form__metric-weight .pounds__container .ft,
+      .bmi__calcbox .form__metric-weight .pounds__container .in,
+      .bmi__calcbox .form__metric-weight .pounds__container .st,
+      .bmi__calcbox .form__metric-weight .pounds__container .lbs,
+      .bmi__calcbox .form__imperial-height .cm__container .cm,
+      .bmi__calcbox .form__imperial-height .cm__container .kg,
+      .bmi__calcbox .form__imperial-height .cm__container .ft,
+      .bmi__calcbox .form__imperial-height .cm__container .in,
+      .bmi__calcbox .form__imperial-height .cm__container .st,
+      .bmi__calcbox .form__imperial-height .cm__container .lbs,
+      .bmi__calcbox .form__imperial-height .kg__container .cm,
+      .bmi__calcbox .form__imperial-height .kg__container .kg,
+      .bmi__calcbox .form__imperial-height .kg__container .ft,
+      .bmi__calcbox .form__imperial-height .kg__container .in,
+      .bmi__calcbox .form__imperial-height .kg__container .st,
+      .bmi__calcbox .form__imperial-height .kg__container .lbs,
+      .bmi__calcbox .form__imperial-height .foot__container .cm,
+      .bmi__calcbox .form__imperial-height .foot__container .kg,
+      .bmi__calcbox .form__imperial-height .foot__container .ft,
+      .bmi__calcbox .form__imperial-height .foot__container .in,
+      .bmi__calcbox .form__imperial-height .foot__container .st,
+      .bmi__calcbox .form__imperial-height .foot__container .lbs,
+      .bmi__calcbox .form__imperial-height .inch__container .cm,
+      .bmi__calcbox .form__imperial-height .inch__container .kg,
+      .bmi__calcbox .form__imperial-height .inch__container .ft,
+      .bmi__calcbox .form__imperial-height .inch__container .in,
+      .bmi__calcbox .form__imperial-height .inch__container .st,
+      .bmi__calcbox .form__imperial-height .inch__container .lbs,
+      .bmi__calcbox .form__imperial-height .stone__container .cm,
+      .bmi__calcbox .form__imperial-height .stone__container .kg,
+      .bmi__calcbox .form__imperial-height .stone__container .ft,
+      .bmi__calcbox .form__imperial-height .stone__container .in,
+      .bmi__calcbox .form__imperial-height .stone__container .st,
+      .bmi__calcbox .form__imperial-height .stone__container .lbs,
+      .bmi__calcbox .form__imperial-height .pounds__container .cm,
+      .bmi__calcbox .form__imperial-height .pounds__container .kg,
+      .bmi__calcbox .form__imperial-height .pounds__container .ft,
+      .bmi__calcbox .form__imperial-height .pounds__container .in,
+      .bmi__calcbox .form__imperial-height .pounds__container .st,
+      .bmi__calcbox .form__imperial-height .pounds__container .lbs,
+      .bmi__calcbox .form__imperial-weight .cm__container .cm,
+      .bmi__calcbox .form__imperial-weight .cm__container .kg,
+      .bmi__calcbox .form__imperial-weight .cm__container .ft,
+      .bmi__calcbox .form__imperial-weight .cm__container .in,
+      .bmi__calcbox .form__imperial-weight .cm__container .st,
+      .bmi__calcbox .form__imperial-weight .cm__container .lbs,
+      .bmi__calcbox .form__imperial-weight .kg__container .cm,
+      .bmi__calcbox .form__imperial-weight .kg__container .kg,
+      .bmi__calcbox .form__imperial-weight .kg__container .ft,
+      .bmi__calcbox .form__imperial-weight .kg__container .in,
+      .bmi__calcbox .form__imperial-weight .kg__container .st,
+      .bmi__calcbox .form__imperial-weight .kg__container .lbs,
+      .bmi__calcbox .form__imperial-weight .foot__container .cm,
+      .bmi__calcbox .form__imperial-weight .foot__container .kg,
+      .bmi__calcbox .form__imperial-weight .foot__container .ft,
+      .bmi__calcbox .form__imperial-weight .foot__container .in,
+      .bmi__calcbox .form__imperial-weight .foot__container .st,
+      .bmi__calcbox .form__imperial-weight .foot__container .lbs,
+      .bmi__calcbox .form__imperial-weight .inch__container .cm,
+      .bmi__calcbox .form__imperial-weight .inch__container .kg,
+      .bmi__calcbox .form__imperial-weight .inch__container .ft,
+      .bmi__calcbox .form__imperial-weight .inch__container .in,
+      .bmi__calcbox .form__imperial-weight .inch__container .st,
+      .bmi__calcbox .form__imperial-weight .inch__container .lbs,
+      .bmi__calcbox .form__imperial-weight .stone__container .cm,
+      .bmi__calcbox .form__imperial-weight .stone__container .kg,
+      .bmi__calcbox .form__imperial-weight .stone__container .ft,
+      .bmi__calcbox .form__imperial-weight .stone__container .in,
+      .bmi__calcbox .form__imperial-weight .stone__container .st,
+      .bmi__calcbox .form__imperial-weight .stone__container .lbs,
+      .bmi__calcbox .form__imperial-weight .pounds__container .cm,
+      .bmi__calcbox .form__imperial-weight .pounds__container .kg,
+      .bmi__calcbox .form__imperial-weight .pounds__container .ft,
+      .bmi__calcbox .form__imperial-weight .pounds__container .in,
+      .bmi__calcbox .form__imperial-weight .pounds__container .st,
+      .bmi__calcbox .form__imperial-weight .pounds__container .lbs {
+        position: absolute;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #345ff6;
+        top: -4.6rem;
+        left: 22rem; }
+      @media (max-width: 56.25em) {
+        .bmi__calcbox .form__metric-height .cm__container .cm,
+        .bmi__calcbox .form__metric-height .cm__container .kg,
+        .bmi__calcbox .form__metric-height .kg__container .cm,
+        .bmi__calcbox .form__metric-height .kg__container .kg,
+        .bmi__calcbox .form__metric-height .foot__container .cm,
+        .bmi__calcbox .form__metric-height .foot__container .kg,
+        .bmi__calcbox .form__metric-height .inch__container .cm,
+        .bmi__calcbox .form__metric-height .inch__container .kg,
+        .bmi__calcbox .form__metric-height .stone__container .cm,
+        .bmi__calcbox .form__metric-height .stone__container .kg,
+        .bmi__calcbox .form__metric-height .pounds__container .cm,
+        .bmi__calcbox .form__metric-height .pounds__container .kg, .bmi__calcbox .form__metric-weight .cm__container .cm,
+        .bmi__calcbox .form__metric-weight .cm__container .kg,
+        .bmi__calcbox .form__metric-weight .kg__container .cm,
+        .bmi__calcbox .form__metric-weight .kg__container .kg,
+        .bmi__calcbox .form__metric-weight .foot__container .cm,
+        .bmi__calcbox .form__metric-weight .foot__container .kg,
+        .bmi__calcbox .form__metric-weight .inch__container .cm,
+        .bmi__calcbox .form__metric-weight .inch__container .kg,
+        .bmi__calcbox .form__metric-weight .stone__container .cm,
+        .bmi__calcbox .form__metric-weight .stone__container .kg,
+        .bmi__calcbox .form__metric-weight .pounds__container .cm,
+        .bmi__calcbox .form__metric-weight .pounds__container .kg,
+        .bmi__calcbox .form__imperial-height .cm__container .cm,
+        .bmi__calcbox .form__imperial-height .cm__container .kg,
+        .bmi__calcbox .form__imperial-height .kg__container .cm,
+        .bmi__calcbox .form__imperial-height .kg__container .kg,
+        .bmi__calcbox .form__imperial-height .foot__container .cm,
+        .bmi__calcbox .form__imperial-height .foot__container .kg,
+        .bmi__calcbox .form__imperial-height .inch__container .cm,
+        .bmi__calcbox .form__imperial-height .inch__container .kg,
+        .bmi__calcbox .form__imperial-height .stone__container .cm,
+        .bmi__calcbox .form__imperial-height .stone__container .kg,
+        .bmi__calcbox .form__imperial-height .pounds__container .cm,
+        .bmi__calcbox .form__imperial-height .pounds__container .kg,
+        .bmi__calcbox .form__imperial-weight .cm__container .cm,
+        .bmi__calcbox .form__imperial-weight .cm__container .kg,
+        .bmi__calcbox .form__imperial-weight .kg__container .cm,
+        .bmi__calcbox .form__imperial-weight .kg__container .kg,
+        .bmi__calcbox .form__imperial-weight .foot__container .cm,
+        .bmi__calcbox .form__imperial-weight .foot__container .kg,
+        .bmi__calcbox .form__imperial-weight .inch__container .cm,
+        .bmi__calcbox .form__imperial-weight .inch__container .kg,
+        .bmi__calcbox .form__imperial-weight .stone__container .cm,
+        .bmi__calcbox .form__imperial-weight .stone__container .kg,
+        .bmi__calcbox .form__imperial-weight .pounds__container .cm,
+        .bmi__calcbox .form__imperial-weight .pounds__container .kg {
+          left: 25rem; } }
+      @media (max-width: 37.75em) {
+        .bmi__calcbox .form__metric-height .cm__container .cm,
+        .bmi__calcbox .form__metric-height .cm__container .kg,
+        .bmi__calcbox .form__metric-height .kg__container .cm,
+        .bmi__calcbox .form__metric-height .kg__container .kg,
+        .bmi__calcbox .form__metric-height .foot__container .cm,
+        .bmi__calcbox .form__metric-height .foot__container .kg,
+        .bmi__calcbox .form__metric-height .inch__container .cm,
+        .bmi__calcbox .form__metric-height .inch__container .kg,
+        .bmi__calcbox .form__metric-height .stone__container .cm,
+        .bmi__calcbox .form__metric-height .stone__container .kg,
+        .bmi__calcbox .form__metric-height .pounds__container .cm,
+        .bmi__calcbox .form__metric-height .pounds__container .kg, .bmi__calcbox .form__metric-weight .cm__container .cm,
+        .bmi__calcbox .form__metric-weight .cm__container .kg,
+        .bmi__calcbox .form__metric-weight .kg__container .cm,
+        .bmi__calcbox .form__metric-weight .kg__container .kg,
+        .bmi__calcbox .form__metric-weight .foot__container .cm,
+        .bmi__calcbox .form__metric-weight .foot__container .kg,
+        .bmi__calcbox .form__metric-weight .inch__container .cm,
+        .bmi__calcbox .form__metric-weight .inch__container .kg,
+        .bmi__calcbox .form__metric-weight .stone__container .cm,
+        .bmi__calcbox .form__metric-weight .stone__container .kg,
+        .bmi__calcbox .form__metric-weight .pounds__container .cm,
+        .bmi__calcbox .form__metric-weight .pounds__container .kg,
+        .bmi__calcbox .form__imperial-height .cm__container .cm,
+        .bmi__calcbox .form__imperial-height .cm__container .kg,
+        .bmi__calcbox .form__imperial-height .kg__container .cm,
+        .bmi__calcbox .form__imperial-height .kg__container .kg,
+        .bmi__calcbox .form__imperial-height .foot__container .cm,
+        .bmi__calcbox .form__imperial-height .foot__container .kg,
+        .bmi__calcbox .form__imperial-height .inch__container .cm,
+        .bmi__calcbox .form__imperial-height .inch__container .kg,
+        .bmi__calcbox .form__imperial-height .stone__container .cm,
+        .bmi__calcbox .form__imperial-height .stone__container .kg,
+        .bmi__calcbox .form__imperial-height .pounds__container .cm,
+        .bmi__calcbox .form__imperial-height .pounds__container .kg,
+        .bmi__calcbox .form__imperial-weight .cm__container .cm,
+        .bmi__calcbox .form__imperial-weight .cm__container .kg,
+        .bmi__calcbox .form__imperial-weight .kg__container .cm,
+        .bmi__calcbox .form__imperial-weight .kg__container .kg,
+        .bmi__calcbox .form__imperial-weight .foot__container .cm,
+        .bmi__calcbox .form__imperial-weight .foot__container .kg,
+        .bmi__calcbox .form__imperial-weight .inch__container .cm,
+        .bmi__calcbox .form__imperial-weight .inch__container .kg,
+        .bmi__calcbox .form__imperial-weight .stone__container .cm,
+        .bmi__calcbox .form__imperial-weight .stone__container .kg,
+        .bmi__calcbox .form__imperial-weight .pounds__container .cm,
+        .bmi__calcbox .form__imperial-weight .pounds__container .kg {
+          left: 28.4rem; } }
+      @media (max-width: 56.25em) {
+        .bmi__calcbox .form__metric-height .cm__container .ft,
+        .bmi__calcbox .form__metric-height .cm__container .in,
+        .bmi__calcbox .form__metric-height .cm__container .st,
+        .bmi__calcbox .form__metric-height .cm__container .lbs,
+        .bmi__calcbox .form__metric-height .kg__container .ft,
+        .bmi__calcbox .form__metric-height .kg__container .in,
+        .bmi__calcbox .form__metric-height .kg__container .st,
+        .bmi__calcbox .form__metric-height .kg__container .lbs,
+        .bmi__calcbox .form__metric-height .foot__container .ft,
+        .bmi__calcbox .form__metric-height .foot__container .in,
+        .bmi__calcbox .form__metric-height .foot__container .st,
+        .bmi__calcbox .form__metric-height .foot__container .lbs,
+        .bmi__calcbox .form__metric-height .inch__container .ft,
+        .bmi__calcbox .form__metric-height .inch__container .in,
+        .bmi__calcbox .form__metric-height .inch__container .st,
+        .bmi__calcbox .form__metric-height .inch__container .lbs,
+        .bmi__calcbox .form__metric-height .stone__container .ft,
+        .bmi__calcbox .form__metric-height .stone__container .in,
+        .bmi__calcbox .form__metric-height .stone__container .st,
+        .bmi__calcbox .form__metric-height .stone__container .lbs,
+        .bmi__calcbox .form__metric-height .pounds__container .ft,
+        .bmi__calcbox .form__metric-height .pounds__container .in,
+        .bmi__calcbox .form__metric-height .pounds__container .st,
+        .bmi__calcbox .form__metric-height .pounds__container .lbs, .bmi__calcbox .form__metric-weight .cm__container .ft,
+        .bmi__calcbox .form__metric-weight .cm__container .in,
+        .bmi__calcbox .form__metric-weight .cm__container .st,
+        .bmi__calcbox .form__metric-weight .cm__container .lbs,
+        .bmi__calcbox .form__metric-weight .kg__container .ft,
+        .bmi__calcbox .form__metric-weight .kg__container .in,
+        .bmi__calcbox .form__metric-weight .kg__container .st,
+        .bmi__calcbox .form__metric-weight .kg__container .lbs,
+        .bmi__calcbox .form__metric-weight .foot__container .ft,
+        .bmi__calcbox .form__metric-weight .foot__container .in,
+        .bmi__calcbox .form__metric-weight .foot__container .st,
+        .bmi__calcbox .form__metric-weight .foot__container .lbs,
+        .bmi__calcbox .form__metric-weight .inch__container .ft,
+        .bmi__calcbox .form__metric-weight .inch__container .in,
+        .bmi__calcbox .form__metric-weight .inch__container .st,
+        .bmi__calcbox .form__metric-weight .inch__container .lbs,
+        .bmi__calcbox .form__metric-weight .stone__container .ft,
+        .bmi__calcbox .form__metric-weight .stone__container .in,
+        .bmi__calcbox .form__metric-weight .stone__container .st,
+        .bmi__calcbox .form__metric-weight .stone__container .lbs,
+        .bmi__calcbox .form__metric-weight .pounds__container .ft,
+        .bmi__calcbox .form__metric-weight .pounds__container .in,
+        .bmi__calcbox .form__metric-weight .pounds__container .st,
+        .bmi__calcbox .form__metric-weight .pounds__container .lbs,
+        .bmi__calcbox .form__imperial-height .cm__container .ft,
+        .bmi__calcbox .form__imperial-height .cm__container .in,
+        .bmi__calcbox .form__imperial-height .cm__container .st,
+        .bmi__calcbox .form__imperial-height .cm__container .lbs,
+        .bmi__calcbox .form__imperial-height .kg__container .ft,
+        .bmi__calcbox .form__imperial-height .kg__container .in,
+        .bmi__calcbox .form__imperial-height .kg__container .st,
+        .bmi__calcbox .form__imperial-height .kg__container .lbs,
+        .bmi__calcbox .form__imperial-height .foot__container .ft,
+        .bmi__calcbox .form__imperial-height .foot__container .in,
+        .bmi__calcbox .form__imperial-height .foot__container .st,
+        .bmi__calcbox .form__imperial-height .foot__container .lbs,
+        .bmi__calcbox .form__imperial-height .inch__container .ft,
+        .bmi__calcbox .form__imperial-height .inch__container .in,
+        .bmi__calcbox .form__imperial-height .inch__container .st,
+        .bmi__calcbox .form__imperial-height .inch__container .lbs,
+        .bmi__calcbox .form__imperial-height .stone__container .ft,
+        .bmi__calcbox .form__imperial-height .stone__container .in,
+        .bmi__calcbox .form__imperial-height .stone__container .st,
+        .bmi__calcbox .form__imperial-height .stone__container .lbs,
+        .bmi__calcbox .form__imperial-height .pounds__container .ft,
+        .bmi__calcbox .form__imperial-height .pounds__container .in,
+        .bmi__calcbox .form__imperial-height .pounds__container .st,
+        .bmi__calcbox .form__imperial-height .pounds__container .lbs,
+        .bmi__calcbox .form__imperial-weight .cm__container .ft,
+        .bmi__calcbox .form__imperial-weight .cm__container .in,
+        .bmi__calcbox .form__imperial-weight .cm__container .st,
+        .bmi__calcbox .form__imperial-weight .cm__container .lbs,
+        .bmi__calcbox .form__imperial-weight .kg__container .ft,
+        .bmi__calcbox .form__imperial-weight .kg__container .in,
+        .bmi__calcbox .form__imperial-weight .kg__container .st,
+        .bmi__calcbox .form__imperial-weight .kg__container .lbs,
+        .bmi__calcbox .form__imperial-weight .foot__container .ft,
+        .bmi__calcbox .form__imperial-weight .foot__container .in,
+        .bmi__calcbox .form__imperial-weight .foot__container .st,
+        .bmi__calcbox .form__imperial-weight .foot__container .lbs,
+        .bmi__calcbox .form__imperial-weight .inch__container .ft,
+        .bmi__calcbox .form__imperial-weight .inch__container .in,
+        .bmi__calcbox .form__imperial-weight .inch__container .st,
+        .bmi__calcbox .form__imperial-weight .inch__container .lbs,
+        .bmi__calcbox .form__imperial-weight .stone__container .ft,
+        .bmi__calcbox .form__imperial-weight .stone__container .in,
+        .bmi__calcbox .form__imperial-weight .stone__container .st,
+        .bmi__calcbox .form__imperial-weight .stone__container .lbs,
+        .bmi__calcbox .form__imperial-weight .pounds__container .ft,
+        .bmi__calcbox .form__imperial-weight .pounds__container .in,
+        .bmi__calcbox .form__imperial-weight .pounds__container .st,
+        .bmi__calcbox .form__imperial-weight .pounds__container .lbs {
+          left: 24rem; } }
+      @media (max-width: 37.75em) {
+        .bmi__calcbox .form__metric-height .cm__container .ft,
+        .bmi__calcbox .form__metric-height .cm__container .in,
+        .bmi__calcbox .form__metric-height .cm__container .st,
+        .bmi__calcbox .form__metric-height .cm__container .lbs,
+        .bmi__calcbox .form__metric-height .kg__container .ft,
+        .bmi__calcbox .form__metric-height .kg__container .in,
+        .bmi__calcbox .form__metric-height .kg__container .st,
+        .bmi__calcbox .form__metric-height .kg__container .lbs,
+        .bmi__calcbox .form__metric-height .foot__container .ft,
+        .bmi__calcbox .form__metric-height .foot__container .in,
+        .bmi__calcbox .form__metric-height .foot__container .st,
+        .bmi__calcbox .form__metric-height .foot__container .lbs,
+        .bmi__calcbox .form__metric-height .inch__container .ft,
+        .bmi__calcbox .form__metric-height .inch__container .in,
+        .bmi__calcbox .form__metric-height .inch__container .st,
+        .bmi__calcbox .form__metric-height .inch__container .lbs,
+        .bmi__calcbox .form__metric-height .stone__container .ft,
+        .bmi__calcbox .form__metric-height .stone__container .in,
+        .bmi__calcbox .form__metric-height .stone__container .st,
+        .bmi__calcbox .form__metric-height .stone__container .lbs,
+        .bmi__calcbox .form__metric-height .pounds__container .ft,
+        .bmi__calcbox .form__metric-height .pounds__container .in,
+        .bmi__calcbox .form__metric-height .pounds__container .st,
+        .bmi__calcbox .form__metric-height .pounds__container .lbs, .bmi__calcbox .form__metric-weight .cm__container .ft,
+        .bmi__calcbox .form__metric-weight .cm__container .in,
+        .bmi__calcbox .form__metric-weight .cm__container .st,
+        .bmi__calcbox .form__metric-weight .cm__container .lbs,
+        .bmi__calcbox .form__metric-weight .kg__container .ft,
+        .bmi__calcbox .form__metric-weight .kg__container .in,
+        .bmi__calcbox .form__metric-weight .kg__container .st,
+        .bmi__calcbox .form__metric-weight .kg__container .lbs,
+        .bmi__calcbox .form__metric-weight .foot__container .ft,
+        .bmi__calcbox .form__metric-weight .foot__container .in,
+        .bmi__calcbox .form__metric-weight .foot__container .st,
+        .bmi__calcbox .form__metric-weight .foot__container .lbs,
+        .bmi__calcbox .form__metric-weight .inch__container .ft,
+        .bmi__calcbox .form__metric-weight .inch__container .in,
+        .bmi__calcbox .form__metric-weight .inch__container .st,
+        .bmi__calcbox .form__metric-weight .inch__container .lbs,
+        .bmi__calcbox .form__metric-weight .stone__container .ft,
+        .bmi__calcbox .form__metric-weight .stone__container .in,
+        .bmi__calcbox .form__metric-weight .stone__container .st,
+        .bmi__calcbox .form__metric-weight .stone__container .lbs,
+        .bmi__calcbox .form__metric-weight .pounds__container .ft,
+        .bmi__calcbox .form__metric-weight .pounds__container .in,
+        .bmi__calcbox .form__metric-weight .pounds__container .st,
+        .bmi__calcbox .form__metric-weight .pounds__container .lbs,
+        .bmi__calcbox .form__imperial-height .cm__container .ft,
+        .bmi__calcbox .form__imperial-height .cm__container .in,
+        .bmi__calcbox .form__imperial-height .cm__container .st,
+        .bmi__calcbox .form__imperial-height .cm__container .lbs,
+        .bmi__calcbox .form__imperial-height .kg__container .ft,
+        .bmi__calcbox .form__imperial-height .kg__container .in,
+        .bmi__calcbox .form__imperial-height .kg__container .st,
+        .bmi__calcbox .form__imperial-height .kg__container .lbs,
+        .bmi__calcbox .form__imperial-height .foot__container .ft,
+        .bmi__calcbox .form__imperial-height .foot__container .in,
+        .bmi__calcbox .form__imperial-height .foot__container .st,
+        .bmi__calcbox .form__imperial-height .foot__container .lbs,
+        .bmi__calcbox .form__imperial-height .inch__container .ft,
+        .bmi__calcbox .form__imperial-height .inch__container .in,
+        .bmi__calcbox .form__imperial-height .inch__container .st,
+        .bmi__calcbox .form__imperial-height .inch__container .lbs,
+        .bmi__calcbox .form__imperial-height .stone__container .ft,
+        .bmi__calcbox .form__imperial-height .stone__container .in,
+        .bmi__calcbox .form__imperial-height .stone__container .st,
+        .bmi__calcbox .form__imperial-height .stone__container .lbs,
+        .bmi__calcbox .form__imperial-height .pounds__container .ft,
+        .bmi__calcbox .form__imperial-height .pounds__container .in,
+        .bmi__calcbox .form__imperial-height .pounds__container .st,
+        .bmi__calcbox .form__imperial-height .pounds__container .lbs,
+        .bmi__calcbox .form__imperial-weight .cm__container .ft,
+        .bmi__calcbox .form__imperial-weight .cm__container .in,
+        .bmi__calcbox .form__imperial-weight .cm__container .st,
+        .bmi__calcbox .form__imperial-weight .cm__container .lbs,
+        .bmi__calcbox .form__imperial-weight .kg__container .ft,
+        .bmi__calcbox .form__imperial-weight .kg__container .in,
+        .bmi__calcbox .form__imperial-weight .kg__container .st,
+        .bmi__calcbox .form__imperial-weight .kg__container .lbs,
+        .bmi__calcbox .form__imperial-weight .foot__container .ft,
+        .bmi__calcbox .form__imperial-weight .foot__container .in,
+        .bmi__calcbox .form__imperial-weight .foot__container .st,
+        .bmi__calcbox .form__imperial-weight .foot__container .lbs,
+        .bmi__calcbox .form__imperial-weight .inch__container .ft,
+        .bmi__calcbox .form__imperial-weight .inch__container .in,
+        .bmi__calcbox .form__imperial-weight .inch__container .st,
+        .bmi__calcbox .form__imperial-weight .inch__container .lbs,
+        .bmi__calcbox .form__imperial-weight .stone__container .ft,
+        .bmi__calcbox .form__imperial-weight .stone__container .in,
+        .bmi__calcbox .form__imperial-weight .stone__container .st,
+        .bmi__calcbox .form__imperial-weight .stone__container .lbs,
+        .bmi__calcbox .form__imperial-weight .pounds__container .ft,
+        .bmi__calcbox .form__imperial-weight .pounds__container .in,
+        .bmi__calcbox .form__imperial-weight .pounds__container .st,
+        .bmi__calcbox .form__imperial-weight .pounds__container .lbs {
+          left: 10rem; } }
     .bmi__calcbox .form__metric .input__btn,
     .bmi__calcbox .form__imperial .input__btn {
       display: none; }
+  @media (max-width: 37.75em) {
+    .bmi__calcbox .form__metric {
+      grid-template-columns: 1fr; } }
   .bmi__calcbox .result__box {
     padding: 2.4rem 4rem;
     border-radius: 0.6rem;
@@ -200,8 +659,14 @@ body {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 5.2rem; }
+      @media (max-width: 37.75em) {
+        .bmi__calcbox .result__box .display__box {
+          grid-template-columns: 1fr; } }
       .bmi__calcbox .result__box .display__box-result {
         animation: slideRight 0.2s; }
+        @media (max-width: 37.75em) {
+          .bmi__calcbox .result__box .display__box-result {
+            animation: moveDown 0.2s; } }
         .bmi__calcbox .result__box .display__box-result .result__tip {
           margin-bottom: 2rem;
           font-size: 1.6rem; }
@@ -211,6 +676,9 @@ body {
       .bmi__calcbox .result__box .display__box-recommendation {
         font-size: 1.6rem;
         animation: slideLeft 0.2s; }
+        @media (max-width: 37.75em) {
+          .bmi__calcbox .result__box .display__box-recommendation {
+            animation: moveUp 0.2s; } }
         .bmi__calcbox .result__box .display__box-recommendation .bmi__recommendation {
           line-height: 1.5; }
         .bmi__calcbox .result__box .display__box-recommendation .min-bmi,
@@ -236,10 +704,64 @@ body {
         text-align: center;
         animation: moveUp 0.2s; }
 
+.header__main {
+  max-width: 70%;
+  margin-left: 2rem;
+  padding: 4rem 4rem;
+  height: 90vh;
+  background-image: linear-gradient(to bottom right, #ffffff, #d8e2e7);
+  border-radius: 0 0 4rem 4rem;
+  position: relative; }
+  @media (max-width: 56.25em) {
+    .header__main {
+      height: 50vh;
+      max-width: 100%;
+      margin-left: 0;
+      padding: 4rem 8rem; } }
+  @media (max-width: 37.75em) {
+    .header__main {
+      height: 70vh; } }
+  @media (max-width: 56.25em) {
+    .header__main-logo {
+      text-align: center; } }
+  @media (max-width: 56.25em) {
+    .header__main .logo {
+      width: 6rem; } }
+  .header__main-textbox {
+    max-width: 60%; }
+    @media (max-width: 56.25em) {
+      .header__main-textbox {
+        max-width: 100%; } }
+  .header__main-heading-main {
+    font-size: 4.8rem;
+    font-weight: 600;
+    color: #253347;
+    animation: moveDown 1s; }
+    @media (max-width: 56.25em) {
+      .header__main-heading-main {
+        text-align: center; } }
+  .header__main-text-main {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #5e6e85;
+    animation: moveUp 1s; }
+    @media (max-width: 56.25em) {
+      .header__main-text-main {
+        text-align: center; } }
+
 .section__result-analysis .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem; }
+  @media (max-width: 56.25em) {
+    .section__result-analysis .wrapper {
+      margin-top: 30rem; } }
+  @media (max-width: 37.75em) {
+    .section__result-analysis .wrapper {
+      margin-top: 60rem; } }
+  @media (max-width: 37.75em) {
+    .section__result-analysis .wrapper {
+      grid-template-columns: 1fr; } }
   .section__result-analysis .wrapper__img-container {
     margin: 0 auto; }
     .section__result-analysis .wrapper__img-container .image {
@@ -251,6 +773,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2.4rem; }
+    @media (max-width: 37.75em) {
+      .section__result-analysis .wrapper__analysis-container {
+        padding: 4rem 1.8rem; } }
     .section__result-analysis .wrapper__analysis-container .analysis__heading {
       margin-top: 10rem;
       letter-spacing: 0.1rem;
@@ -266,12 +791,35 @@ body {
   padding: 4rem;
   margin: 8rem 0;
   background-color: #d8e2e7; }
+  @media (max-width: 37.75em) {
+    .section__guidelines {
+      padding: 3.2rem 0.8rem; } }
   .section__guidelines-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem; }
+    @media (max-width: 56.25em) {
+      .section__guidelines-container {
+        grid-template-columns: 1fr; } }
     .section__guidelines-container .guideline__item {
       padding: 0 4rem; }
+      @media (max-width: 37.75em) {
+        .section__guidelines-container .guideline__item {
+          padding: 0 1.8rem; } }
+      @media (max-width: 56.25em) {
+        .section__guidelines-container .guideline__item-logo {
+          float: left;
+          content: "";
+          clear: both; } }
+      @media (max-width: 37.75em) {
+        .section__guidelines-container .guideline__item-logo {
+          float: none; } }
+      @media (max-width: 56.25em) {
+        .section__guidelines-container .guideline__item-heading, .section__guidelines-container .guideline__item-description {
+          margin-left: 14rem; } }
+      @media (max-width: 37.75em) {
+        .section__guidelines-container .guideline__item-heading, .section__guidelines-container .guideline__item-description {
+          margin-left: 0; } }
       .section__guidelines-container .guideline__item-heading {
         font-size: 2.4rem;
         font-weight: 500;
@@ -282,26 +830,49 @@ body {
 
 .section__limitations {
   padding: 0 4rem;
-  height: 115vh; }
+  height: 120vh; }
+  @media (max-width: 56.25em) {
+    .section__limitations {
+      height: 60vh; } }
+  @media (max-width: 37.75em) {
+    .section__limitations {
+      padding: 0 1.8rem; } }
   .section__limitations-container {
     padding: inherit; }
   .section__limitations .limitations__intro-container {
-    max-width: 60.8rem;
+    max-width: 50%;
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .section__limitations .limitations__intro-container {
+        margin: 0 auto;
+        max-width: 100%;
+        margin-bottom: 10rem; } }
     .section__limitations .limitations__intro-container .limitations__heading {
       font-size: 4.8rem;
       color: #253347; }
+      @media (max-width: 56.25em) {
+        .section__limitations .limitations__intro-container .limitations__heading {
+          text-align: center; } }
     .section__limitations .limitations__intro-container .limitations__description {
       font-size: 1.6rem;
       color: #5e6e85;
       line-height: 1.5; }
+      @media (max-width: 56.25em) {
+        .section__limitations .limitations__intro-container .limitations__description {
+          text-align: center; } }
   .section__limitations .limitations__cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.8rem;
     position: relative; }
-    .section__limitations .limitations__cards-container .limitations__cards-container > * {
-      max-width: 38rem; }
+    @media (max-width: 56.25em) {
+      .section__limitations .limitations__cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        position: relative; } }
+    @media (max-width: 37.75em) {
+      .section__limitations .limitations__cards-container {
+        grid-template-columns: 1fr; } }
     .section__limitations .limitations__cards-container .card {
       padding: 2rem 2.4rem;
       box-shadow: 1rem 0 4rem rgba(37, 51, 71, 0.15);
@@ -309,6 +880,19 @@ body {
       .section__limitations .limitations__cards-container .card:nth-child(1), .section__limitations .limitations__cards-container .card:nth-child(2), .section__limitations .limitations__cards-container .card:nth-child(3), .section__limitations .limitations__cards-container .card:nth-child(4), .section__limitations .limitations__cards-container .card:nth-child(5) {
         max-width: 38rem;
         position: absolute; }
+        @media (max-width: 75em) {
+          .section__limitations .limitations__cards-container .card:nth-child(1), .section__limitations .limitations__cards-container .card:nth-child(2), .section__limitations .limitations__cards-container .card:nth-child(3), .section__limitations .limitations__cards-container .card:nth-child(4), .section__limitations .limitations__cards-container .card:nth-child(5) {
+            position: absolute; } }
+        @media (max-width: 56.25em) {
+          .section__limitations .limitations__cards-container .card:nth-child(1), .section__limitations .limitations__cards-container .card:nth-child(2), .section__limitations .limitations__cards-container .card:nth-child(3), .section__limitations .limitations__cards-container .card:nth-child(4), .section__limitations .limitations__cards-container .card:nth-child(5) {
+            position: static;
+            max-width: 100%; } }
+      @media (max-width: 56.25em) {
+        .section__limitations .limitations__cards-container .card:nth-child(5) {
+          transform: translateX(50%); } }
+      @media (max-width: 37.75em) {
+        .section__limitations .limitations__cards-container .card:nth-child(5) {
+          transform: translateX(0); } }
       .section__limitations .limitations__cards-container .card:nth-child(1) {
         top: -22rem;
         right: 10rem; }

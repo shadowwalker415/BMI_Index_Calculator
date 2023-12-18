@@ -8,16 +8,19 @@ class ImperialView {
           <div class="form__imperial-height">
             <label class="input__label" for="foot">Height</label>
             <input type="text" class="input__type" id="foot" name='foot' placeholder="0" />
+            <div class="foot__container"><span class="ft">ft</span></div>
           </div>
 
           <div class="form__imperial-height">
             <label class="input__label-invisible" for="inch">Inch</label>
             <input type="text" class="input__type"  id="inch" name='inch' placeholder="0" />
+            <div class="inch__container"><span class="in">in</span></div>
           </div>
 
           <div class="form__imperial-height">
             <label class="input__label" for="stone">Weight</label>
             <input type="text" class="input__type"  id="stone" name='stone' placeholder="0" />
+            <div class="stone__container"><span class="st">st</span></div>
           </div>
           <div class="form__imperial-height">
             <label class="input__label-invisible"  for="pounds">Pounds</label>
@@ -28,6 +31,7 @@ class ImperialView {
               name='pounds'
               placeholder="0"
             />
+            <div class="pounds__container"><span class="lbs">lbs</span></div>
           </div>
           <input class="input__btn" type="submit" />
       </form>`;
