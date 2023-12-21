@@ -20,6 +20,7 @@
 
   @include respond(phone) {
     height: 70vh;
+    max-width: 100%;
   }
 
   &-logo {
