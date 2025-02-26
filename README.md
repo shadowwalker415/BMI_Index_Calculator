@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [My Solution](https://github.com/shadowwalker415/BMI_Index_Calculator)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://mybmicalculatorb.netlify.app/)
 
 ## My process
 
